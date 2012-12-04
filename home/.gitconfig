@@ -1,0 +1,5 @@
+[user]
+	name = awaxa
+	email = awaxa@awaxa.com
+[core]
+	excludesfile = ~/.gitglobalignore
