@@ -1,0 +1,38 @@
+*filter
+:INPUT ACCEPT [0:0]
+:FORWARD ACCEPT [0:0]
+:OUTPUT ACCEPT [0:0]
+
+# Access
+#-A INPUT -p all -j LOG --log-prefix "** IPTABLES:In ** "
+-A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+-A INPUT -i lo -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 22 -j ACCEPT
+#-A INPUT -p tcp -m tcp --dport 25 -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 443 -j ACCEPT
+#-A INPUT -p tcp -m tcp --dport 53 -j ACCEPT
+#-A INPUT -p udp -m udp --dport 53 -j ACCEPT
+-A INPUT -p udp -m udp --sport 137:138 -j DROP
+-A INPUT -p udp -m udp --dport 137:138 -j DROP
+-A INPUT -p all -j LOG --log-prefix "** IPTABLES:In ** "
+-A INPUT -j DROP
+
+#-A FORWARD -p all -j LOG --log-prefix "** IPTABLES:FORWARD ** "
+-A FORWARD -j DROP
+
+# Access
+#-A OUTPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+#-A OUTPUT -o lo -j ACCEPT
+#-A OUTPUT -p tcp -m tcp --dport 22 -j ACCEPT
+#-A OUTPUT -p tcp -m tcp --dport 25 -j ACCEPT
+#-A OUTPUT -p tcp -m tcp --dport 80 -j ACCEPT
+#-A OUTPUT -p tcp -m tcp --dport 443 -j ACCEPT
+#-A OUTPUT -p tcp -m tcp --dport 21 -j ACCEPT
+#-A OUTPUT -p tcp -m tcp --dport 53 -j ACCEPT
+#-A OUTPUT -p udp -m udp --dport 53 -j ACCEPT
+#-A OUTPUT -p all -j LOG --log-prefix "** IPTABLES:Out ** "
+#-A OUTPUT -j DROP
+
+COMMIT
+
