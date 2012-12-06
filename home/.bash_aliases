@@ -15,4 +15,4 @@ alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
 
-alias agent='eval $(ssh-agent)'
+alias agent='eval $(ssh-agent) && ssh-add ~/.ssh/*id_rsa'
