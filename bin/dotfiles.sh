@@ -1,12 +1,11 @@
 #!/bin/bash
 
-autoinstall="bin home"
+installhome="$HOME/dotfiles/home"
+autoinstall="$HOME/dotfiles/bin"
 
-cd $HOME
+first=0
 
-backup=0
-
-if [ ! -d dotfiles/.git ]
+if [ ! -d $HOME/dotfiles/.git ]
 then
 	curl -s https://raw.github.com/awaxa/dotfiles/master/README.md
 	echo ; echo
@@ -15,20 +14,22 @@ then
 	read -p "Press enter to continue installing dotfiles in $HOME  " gogogo
 	echo "Beginning..."
 	echo
+	cd $HOME
 	git clone https://github.com/awaxa/dotfiles.git
-	backup=1
+else
+	cd $HOME/dotfiles
+	git checkout master
+	git pull
 fi
+cd $HOME
 
-filelist=$(find $(for i in $autoinstall ; do echo -n "$HOME/dotfiles/$i " ; done) -type f | sed "s#^$HOME/dotfiles/home/##g")
-dirlist=$(find $(for i in $autoinstall ; do echo -n "$HOME/dotfiles/$i " ; done) -type d -depth +0 | sed "s#^$HOME/dotfiles/home/##g")
+filelist=$(find $installhome $autoinstall -type f | sed "s#^$HOME/dotfiles/home/##g")
+dirlist=$autoinstall" "$(find $installhome $autoinstall -type d -depth +0 | sed "s#^$HOME/dotfiles/home/##g")
 
-if [ $backup -eq 1 ]
-then
-	for f in $filelist
-	do
-		[ -a $HOME/$f ] && mv -v $HOME/$f $HOME/$f.backup-$(date +%Y.%m.%d-%H%M%S)
-	done
-fi
+for f in $filelist
+do
+	[ -f $HOME/$f ] && mv -v $HOME/$f $HOME/$f.backup-$(date +%Y.%m.%d-%H%M%S)
+done
 
 for d in $dirlist
 do
@@ -37,6 +38,6 @@ done
 
 for f in $filelist
 do
-	ln -sv $f $HOME/$f
+	[ ! -h $HOME/$f ] && ln -sv $HOME/dotfiles/$f $HOME/$f
 done
 
