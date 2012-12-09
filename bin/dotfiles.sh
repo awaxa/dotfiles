@@ -43,7 +43,7 @@ do
 		break
 	elif [ -a $clonepath/$f ]
 	then
-		mv -v $clonepath/$f $backup/backup.$f.$(date +%Y.%m.%d-%H%M%S)
+		mv -v $clonepath/$f $backup/$f.$(date +%Y.%m.%d-%H%M%S)
 	fi
 
 	if [ -f $homeinstall/$f ]
