@@ -10,14 +10,17 @@
         status = auto
         branch = auto
 [alias]
-        a = add                                                                                                                                                                                                                
+        a = add
+        all = add -A
         b = branch
+        bv = branch -av
         c = checkout
         co = checkout
         m = commit -m
         am = commit -am
         d = diff
         ds = diff --stat
-        l = log
-        l1 = log --oneline
+        l = log --oneline
+	l1 = log --pretty=oneline
+        ll = log
         s = status
