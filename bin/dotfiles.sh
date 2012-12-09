@@ -7,7 +7,7 @@ backup=$dotfiles/backup
 homeinstall="$dotfiles/home"
 autoinstall="$dotfiles/bin"
 
-if [ ! -d $dotfiles] && [ ! -d $dotfiles/.git ]
+if [ ! -d $dotfiles ] && [ ! -d $dotfiles/.git ]
 then
 	curl -s https://raw.github.com/awaxa/dotfiles/master/README.md
 	echo ; echo
