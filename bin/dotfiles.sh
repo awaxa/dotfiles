@@ -8,17 +8,27 @@ tstamp=$(date +%Y.%m.%d-%H%M%S)
 homeinstall="$dotfiles/home"
 autoinstall="$dotfiles/bin"
 
-if [ ! -d $dotfiles ] && [ ! -d $dotfiles/.git ]
+
+# check to see if git and curl are installed
+
+if [ ! -d $dotfiles/.git ]
 then
-	curl -s https://raw.github.com/awaxa/dotfiles/master/README.md
-	echo ; echo
-	echo "This script will proceed to clone https://github.com/awaxa/dotfiles.git into your home directory and install symlinks to its contents in the appropriate places."o
-	echo "By default this will move your existing dotfiles to $backup/backup.\$filename.$tstamp and install symlinks in their place?"
-	read -p "Press enter to continue installing dotfiles in $HOME  " gogogo
-	echo "Beginning..."
-	echo
-	cd $clonepath
-	git clone https://github.com/awaxa/dotfiles.git
+	if [ ! -d dotfiles ]
+	then
+		curl -s https://raw.github.com/awaxa/dotfiles/master/README.md
+		echo ; echo
+		echo "This script will proceed to clone https://github.com/awaxa/dotfiles.git into your home directory and install symlinks to its contents in the appropriate places."o
+		echo "By default this will move your existing dotfiles to $backup/backup.\$filename.$tstamp and install symlinks in their place?"
+		read -p "Press enter to continue installing dotfiles in $HOME  " gogogo
+		echo "Beginning..."
+		echo
+		cd $clonepath
+		git clone https://github.com/awaxa/dotfiles.git
+	elif [ -d $dotfiles ]
+	then
+		echo "exception: $dotfiles exists but $dotfiles/.git does not"
+		exit 1
+	fi
 else
 	cd $dotfiles
 	git checkout master
