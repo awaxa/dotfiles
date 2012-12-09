@@ -3,6 +3,7 @@
 clonepath=$HOME
 dotfiles=$clonepath/dotfiles
 backup=$dotfiles/backup
+tstamp=$(date +%Y.%m.%d-%H%M%S)
 
 homeinstall="$dotfiles/home"
 autoinstall="$dotfiles/bin"
@@ -12,7 +13,7 @@ then
 	curl -s https://raw.github.com/awaxa/dotfiles/master/README.md
 	echo ; echo
 	echo "This script will proceed to clone https://github.com/awaxa/dotfiles.git into your home directory and install symlinks to its contents in the appropriate places."o
-	echo "By default this will move your existing dotfiles to $backup/backup.\$filename.$(date +%Y.%m.%d-%H%M%S) and install symlinks in their place?"
+	echo "By default this will move your existing dotfiles to $backup/backup.\$filename.$tstamp and install symlinks in their place?"
 	read -p "Press enter to continue installing dotfiles in $HOME  " gogogo
 	echo "Beginning..."
 	echo
@@ -43,7 +44,7 @@ do
 		break
 	elif [ -a $clonepath/$f ]
 	then
-		mv -v $clonepath/$f $backup/$f.$(date +%Y.%m.%d-%H%M%S)
+		mv -v $clonepath/$f $backup/$f.$tstamp
 	fi
 
 	if [ -f $homeinstall/$f ]
