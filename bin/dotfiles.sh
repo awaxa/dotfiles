@@ -26,7 +26,7 @@ fi
 cd $clonepath
 
 filelist=$(find $homeinstall -type f | sed "s#^$homeinstall/##g")" "$(find $autoinstall -type f | sed "s#^$dotfiles/##g")
-dirlist=$(find $homeinstall -type d -depth +0 | sed "s#^$homeinstall/##g")" "$(find $autoinstall -type d | sed "s#^$dotfiles/##g")
+dirlist=$(find $homeinstall -mindepth 1 -type d | sed "s#^$homeinstall/##g")" "$(find $autoinstall -type d | sed "s#^$dotfiles/##g")
 
 mkdir -pv $backup
 
