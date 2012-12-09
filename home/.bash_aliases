@@ -30,4 +30,4 @@ alias grep_blue='GREP_COLOR="1;34" \grep --color=always --line-buffered'
 alias grep_purple='GREP_COLOR="1;35" \grep --color=always --line-buffered'
 alias grep_teal='GREP_COLOR="1;36" \grep --color=always --line-buffered'
 
-rgrep='rgrep -ns --color=auto'
+alias rgrep='grep -rns --color=auto'
