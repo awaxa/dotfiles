@@ -1,5 +1,23 @@
 [user]
 	name = awaxa
 	email = awaxa@awaxa.com
+[github]
+        user = awaxa
 [core]
 	excludesfile = ~/.gitglobalignore
+[color]
+        diff = auto
+        status = auto
+        branch = auto
+[alias]
+        a = add                                                                                                                                                                                                                
+        b = branch
+        c = checkout
+        co = checkout
+        m = commit -m
+        am = commit -am
+        d = diff
+        ds = diff --stat
+        l = log
+        l1 = log --oneline
+        s = status
