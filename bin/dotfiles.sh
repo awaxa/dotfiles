@@ -7,9 +7,7 @@ backup=$dotfiles/backup
 homeinstall="$dotfiles/home"
 autoinstall="$dotfiles/bin"
 
-first=0
-
-if [ ! -d $dotfiles/.git ]
+if [ ! -d $dotfiles] && [ ! -d $dotfiles/.git ]
 then
 	curl -s https://raw.github.com/awaxa/dotfiles/master/README.md
 	echo ; echo
@@ -35,6 +33,7 @@ mkdir -pv $backup
 for d in $dirlist
 do
 	mkdir -pv $clonepath/$d
+	mkdir -pv $backup/$d
 done
 
 for f in $filelist
