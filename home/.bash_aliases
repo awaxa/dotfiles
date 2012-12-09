@@ -17,6 +17,8 @@ alias l='ls -CF'
 
 alias agent='eval $(ssh-agent) && ssh-add ~/.ssh/*id_rsa'
 
+alias j='jobs'
+
 alias pullm='git pull origin master'
 alias pull="git branch | \grep '*' | sed 's/* //' | xargs git pull origin"
 alias push="git branch | \grep '*' | sed 's/* //' | xargs git push origin"
