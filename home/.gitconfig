@@ -21,6 +21,6 @@
         d = diff
         ds = diff --stat
         l = log --oneline
-	l1 = log --pretty=oneline
+        l1 = log --pretty=oneline
         ll = log
         s = status
