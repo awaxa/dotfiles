@@ -14,8 +14,8 @@
         all = add -A
         b = branch
         bv = branch -av
-        c = checkout
         co = checkout
+        c = commit
         m = commit -m
         am = commit -am
         d = diff
