@@ -6,17 +6,17 @@
   * [raw:dotfiles.sh](https://raw.github.com/awaxa/dotfiles/master/bin/dotfiles.sh "https://raw.github.com/awaxa/dotfiles/master/bin/dotfiles.sh") auto install/update script
   * **THIS COMMAND WON'T PROMPT YOU BEFORE MODIFYING DOTFILES IN $HOME**
   
-  ```shell
-  curl https://raw.github.com/awaxa/dotfiles/master/bin/dotfiles.sh | bash
-  ```
+    ```shell
+    curl https://raw.github.com/awaxa/dotfiles/master/bin/dotfiles.sh | bash
+    ```
   
   * but this would:
   
-  ```shell
-  curl https://raw.github.com/awaxa/dotfiles/master/bin/dotfiles.sh > /tmp/dotfiles.sh
-  chmod +x /tmp/dotfiles.sh
-  /tmp/dotfiles.sh
-  ```
+    ```shell
+    curl https://raw.github.com/awaxa/dotfiles/master/bin/dotfiles.sh > /tmp/dotfiles.sh
+    chmod +x /tmp/dotfiles.sh
+    /tmp/dotfiles.sh
+    ```
     
   * tested on Debian stable/squeeze, Raspbian, and OS X 10.8.2
 * distribution specific branches
