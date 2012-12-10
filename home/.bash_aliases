@@ -32,5 +32,6 @@ alias grep_teal='GREP_COLOR="1;36" \grep --color=always --line-buffered'
 
 alias rgrep='grep -rns --color=auto'
 
-alias rand='apg -a 0 -n 1 -m 16 -x 20 -M SNCL'
+alias rand='apg -a 0 -n 1 -m 16 -x 20 -M NCL'
+alias rands='apg -a 0 -n 1 -m 16 -x 20 -M SNCL'
 
