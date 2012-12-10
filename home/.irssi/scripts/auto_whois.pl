@@ -1,0 +1,1 @@
+/usr/share/irssi/scripts/auto_whois.pl
