@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 clonepath=$HOME
 dotfiles=$clonepath/dotfiles
