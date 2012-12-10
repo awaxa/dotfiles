@@ -70,12 +70,7 @@ do
 		continue
 	elif [ -a $clonepath/$f ]
 	then
-		if [ ! -w $clonepath/$f ] 
-		then
-			continue
-		else
-			 mv -v $clonepath/$f $backup/$f.$tstamp
-		fi
+		mv -v $clonepath/$f $backup/$f.$tstamp
 	fi
 
 	if [ -f $homeinstall/$f ]
