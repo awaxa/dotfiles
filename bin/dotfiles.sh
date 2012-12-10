@@ -8,14 +8,15 @@ tstamp=$(date +%Y.%m.%d-%H%M%S)
 homeinstall="$dotfiles/home"
 autoinstall="$dotfiles/bin"
 
-
-if [ curl --version ]
+curl --version &> /dev/null
+if [ $? -ne 0 ]
 then
 	echo "exception: can't run curl --version"
 	exit 1
 fi
 
-if [ git --version ]
+git --version &> /dev/null
+if [ $? -ne -0 ]
 then
 	echo "exception: can't run git --version"
 	exit 1
