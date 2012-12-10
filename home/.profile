@@ -16,7 +16,7 @@ agentstatus=$?
 if [ $agentstatus -eq 1 ] ; then # 0 = identities >0, 1 = no identities, 2 = no agent
     ssh-add ~/.ssh/*id_rsa 
 elif [ $agentstatus -eq 2 ] ; then
-    ssh-agent > ~/.ssh/agent && . ~/.ssh/agent && ssh-add ~/.ssh/*id_rsa
+    ssh-agent > ~/.ssh/agent && chmod 400 ~/.ssh/agent && . ~/.ssh/agent && ssh-add ~/.ssh/*id_rsa
 fi
 
 $HOME/bin/dotfiles.sh
