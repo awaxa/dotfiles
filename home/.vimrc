@@ -53,6 +53,6 @@ set backspace=indent,eol,start  " make that backspace key work the way it should
 
 syntax on               " turn syntax highlighting on by default
 filetype on             " detect type of file
-filetype indent on      " load indent file for specific file type
+" filetype indent on      " load indent file for specific file type
 
 set t_RV=               " http://bugs.debian.org/608242, http://groups.google.com/group/vim_dev/browse_thread/thread/9770ea844cec3282
