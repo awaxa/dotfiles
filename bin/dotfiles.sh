@@ -49,9 +49,9 @@ done
 
 for f in $filelist
 do
-	if [ -h $clonepath/$f ] && [ "$(readlink $clonepath/$f)" == "$homeinstall/$f" ] 
+	if [ $(expr "$(readlink $clonepath/$f)" : "$dotfiles.*$f") -ge ${#dotfiles} ]
 	then
-		break
+		continue
 	elif [ -a $clonepath/$f ]
 	then
 		mv -v $clonepath/$f $backup/$f.$tstamp
