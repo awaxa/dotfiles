@@ -1,0 +1,64 @@
+set jid = awaxa.com@gmail.com
+set server = talk.google.com
+set ssl = 1
+#set ssl_verify = 0
+set resource = ten
+set disable_random_resource = 1
+set priority = 25
+set priority_away = 0
+set nickname = awaxa.com
+set logging = 1
+set load_logs = 1
+set logging_dir = ~/.mcabber/log/awaxa.com_gmail.com/
+set logging_ignore_status = 1
+set log_muc_conf = 1
+set load_muc_logs = 1
+set max_history_age = 0
+set statefile = ~/.mcabber/mcabber-awaxa.com_gmail.com.state
+set beep_on_message = 1
+set autoaway = 1800
+set message_autoaway = Auto-away (idle)
+# Colors are: black, red, green, yellow, blue, magenta, cyan, white
+set nick_colors = red green yellow blue magenta brightred brightgreen brightyellow brightblue brightmagenta brightwhite
+#set color_background   = default
+set color_background   = black
+#set color_general      = white
+#set color_info         = white
+#set color_msgin        = white
+#set color_msgout       = cyan
+#set color_msghl        = yellow
+#set color_bgstatus     = blue
+#set color_status       = white
+set color_roster = cyan
+set color_bgrostersel  = blue
+set color_rostersel    = brightwhite
+#set color_rosterselmsg = red
+#set color_rosternewmsg = red
+color muc * on
+color roster of * green
+color roster dna * yellow
+color roster _ * white
+#color mucnick my_friend yellow
+#set log_win_height = 5
+set roster_width=13
+set roster_hide_domain = 1
+#set otr = 1
+#otrpolicy default manual
+alias me = say /me
+alias online = status online
+alias o = status online
+alias back = status online
+alias away = status away
+alias a = status away
+alias afk = status away
+alias dnd  = status dnd
+alias notavail = status notavail
+# Ctlr-X (24) bound to /roster alternate
+bind 24 = roster alternate
+# F5 (269) bound to /roster toggle_offline  (centericq-like, IIRC)
+bind 269 = roster toggle_offline
+# F12 (276) bound to /roster toggle
+bind 276 = roster toggle
+# Ctrl-Up/Ctrl-Down bound to /buffer up/down  (like Ctrl-p/Ctrl-n)
+bind 521 = buffer up
+bind 514 = buffer down
