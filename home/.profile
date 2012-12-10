@@ -8,6 +8,14 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
+if [ -f "$HOME/.ssh/agent" ]; then
+    . "$HOME/.ssh/agent"
+else
+    ssh-agent > ~/.ssh/agent && source ~/.ssh/agent && ssh-add ~/.ssh/*id_rsa
+fi
+
+$HOME/bin/dotfiles.sh
+
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
@@ -45,10 +53,3 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-if [ -f "$HOME/.ssh/agent" ]; then
-    . "$HOME/.ssh/agent"
-else
-    sagent
-fi
-
-$HOME/bin/dotfiles.sh
