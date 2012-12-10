@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# variablize github urls
+
 clonepath=$HOME
 dotfiles=$clonepath/dotfiles
 backup=$dotfiles/backup
@@ -67,7 +69,12 @@ do
 		continue
 	elif [ -a $clonepath/$f ]
 	then
-		[ ! -w $clonepath/$f ] || mv -v $clonepath/$f $backup/$f.$tstamp
+		if [ ! -w $clonepath/$f ] 
+		then
+			continue
+		else
+			 mv -v $clonepath/$f $backup/$f.$tstamp
+		fi
 	fi
 
 	if [ -f $homeinstall/$f ]
