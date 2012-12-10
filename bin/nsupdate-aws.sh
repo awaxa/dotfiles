@@ -12,6 +12,7 @@ then
 else
 	response=""
 	cli53=/usr/local/bin/cli53
+	ddwrt=""
 	AWS_ACCESS_KEY_ID=""
 	AWS_SECRET_ACCESS_KEY=""
 	zone="awaxa.net"
@@ -21,6 +22,7 @@ else
 	echo "Please configure nsupdate-aws.sh"
 	read -p "cli53 path (default=$cli53): " response
 	[ ! $response = "" ] && cli53=$response
+	read -p "dd-wrt IP address (default=$cli53): " ddwrt
 	read -p "AWS_ACCESS_KEY_ID (default=$AWS_ACCESS_KEY_ID): " AWS_ACCESS_KEY_ID
 	read -p "AWS_SECRET_ACCESS_KEY (default=$AWS_SECRET_ACCESS_KEY): " AWS_SECRET_ACCESS_KEY
 	read -p "zone (default=$zone): " response
@@ -42,7 +44,7 @@ fi
 
 IPREGEX='[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}'
 
-ip=$(curl -s "http://10.10.10.1/" | grep WAN | egrep -o $IPREGEX) #scrape IP from dd-wrt status page
+ip=$(curl -s "http://$ddwrt/" | grep WAN | egrep -o $IPREGEX) #scrape IP from dd-wrt status page
 #checks=( "http://checkip.dyndns.org/" "http://icanhazip.com" "http://ifconfig.me" )
 
 dig=$(dig +short +trace $record.$zone. | grep ^A | cut -f2 -d' ')
