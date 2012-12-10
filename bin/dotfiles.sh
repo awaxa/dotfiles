@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
-# variablize github urls
+ghuser="awaxa"
+ghrepo="dotfiles"
 
 clonepath=$HOME
-dotfiles=$clonepath/dotfiles
+dotfiles=$clonepath/$ghrepo
 backup=$dotfiles/backup
 tstamp=$(date +%Y.%m.%d-%H%M%S)
 
@@ -26,9 +27,9 @@ fi
 
 if [ ! -d $dotfiles/.git ]
 then
-	if [ ! -d dotfiles ]
+	if [ ! -d $dotfiles ]
 	then
-		curl -s https://raw.github.com/awaxa/dotfiles/master/README.md
+		curl -s https://raw.github.com/$ghuser/$ghrepo/master/README.md
 		echo ; echo
 		echo "This script will proceed to clone https://github.com/awaxa/dotfiles.git into your home directory and install symlinks to its contents in the appropriate places."o
 		echo "By default this will move your existing dotfiles to $backup/backup.\$filename.$tstamp and install symlinks in their place?"
@@ -36,7 +37,7 @@ then
 		echo "Beginning..."
 		echo
 		cd $clonepath
-		git clone git://github.com/awaxa/dotfiles.git
+		git clone git://github.com/$ghuser/$ghrepo.git
 	elif [ -d $dotfiles ]
 	then
 		echo "exception: $dotfiles exists but $dotfiles/.git does not"
