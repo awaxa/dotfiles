@@ -10,8 +10,13 @@
 
 if [ -f "$HOME/.ssh/agent" ]; then
     . "$HOME/.ssh/agent"
-else
-    ssh-agent > ~/.ssh/agent && source ~/.ssh/agent && ssh-add ~/.ssh/*id_rsa
+fi
+ssh-add -l &> /dev/null
+agentstatus=$?
+if [ $agentstatus -eq 1 ] ; then # 0 = identities >0, 1 = no identities, 2 = no agent
+    ssh-add ~/.ssh/*id_rsa 
+elif [ $agentstatus -eq 2 ] ; then
+    ssh-agent > ~/.ssh/agent && . ~/.ssh/agent && ssh-add ~/.ssh/*id_rsa
 fi
 
 $HOME/bin/dotfiles.sh
