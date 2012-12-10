@@ -18,7 +18,7 @@ fi
 
 # set PATH so it includes user's private bin if it exists
 
-for bin in $HOME/bin $HOME/local/bin /usr/local/sbin
+for bin in $HOME/bin $HOME/local/bin /usr/local/bin /usr/local/sbin
 do
     if [ -d "$bin" ] ; then
 	PATH="$bin:$PATH"
