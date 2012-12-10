@@ -67,7 +67,7 @@ do
 		continue
 	elif [ -a $clonepath/$f ]
 	then
-		mv -v $clonepath/$f $backup/$f.$tstamp
+		[ ! -w $clonepath/$f ] || mv -v $clonepath/$f $backup/$f.$tstamp
 	fi
 
 	if [ -f $homeinstall/$f ]
