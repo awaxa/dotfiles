@@ -49,7 +49,7 @@ else
 fi
 cd $clonepath
 
-filelist=$(find $homeinstall -type f | sed "s#^$homeinstall/##g")" "$(find $autoinstall -type f | sed "s#^$dotfiles/##g")
+filelist=$(find $homeinstall -type f | sed "s#^$homeinstall/##g" | grep -v \.swp$)" "$(find $autoinstall -type f | sed "s#^$dotfiles/##g" | grep -v \.swp$)
 dirlist=$(find $homeinstall -mindepth 1 -type d | sed "s#^$homeinstall/##g")" "$(find $autoinstall -type d | sed "s#^$dotfiles/##g")
 
 mkdir -pv $backup
