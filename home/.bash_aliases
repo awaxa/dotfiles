@@ -15,7 +15,9 @@ alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
 
-alias agent='eval $(ssh-agent) && ssh-add ~/.ssh/*id_rsa'
+alias sagent='ssh-agent > ~/.ssh/agent && source ~/.ssh/agent && ssh-add ~/.ssh/*id_rsa'
+alias agent='source ~/.ssh/agent'
+alias kagent='pkill ssh-agent ; unset SSH_AUTH_SOCK SSH_AGENT_PID ; rm ~/.ssh/agent'
 
 alias j='jobs'
 
