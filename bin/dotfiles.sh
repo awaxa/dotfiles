@@ -9,7 +9,17 @@ homeinstall="$dotfiles/home"
 autoinstall="$dotfiles/bin"
 
 
-# check to see if git and curl are installed
+if [ curl --version ]
+then
+	echo "exception: can't run curl --version"
+	exit 1
+fi
+
+if [ git --version ]
+then
+	echo "exception: can't run git --version"
+	exit 1
+fi
 
 if [ ! -d $dotfiles/.git ]
 then
