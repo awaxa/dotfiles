@@ -1,0 +1,1 @@
+/usr/share/irssi/scripts/mouse_soliton.pl
