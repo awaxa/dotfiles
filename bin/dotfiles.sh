@@ -11,6 +11,7 @@ dotfiles=$clonepath/$ghrepo
 backup=$dotfiles/backup
 tstamp=$(date +%Y.%m.%d-%H%M%S)
 now=$(date +%s)
+intervalfile=$dotfiles/.git/AUTOUPDATE_OLDERTHAN
 
 homeinstall="$dotfiles/home"
 autoinstall="$dotfiles/bin"
@@ -55,18 +56,18 @@ else
 	fetchhead=0
 	if [[ "$uname" == "Linux" ]]
 	then
-		stat -c %Y $dotfiles/.git/FETCH_HEAD
-		fetchhead=$(/usr/bin/stat -c %Y $dotfiles/.git/FETCH_HEAD)
+# date --date="-3 minutes"
+		fetchhead=$(stat --format %Y $dotfiles/.git/FETCH_HEAD)
 	elif [[ "$uname" == "Darwin" ]]
 	then
-		echo $(/usr/bin/stat -f %c $dotfiles/.git/FETCH_HEAD)
-		fetchhead=$(/usr/bin/stat -f %c $dotfiles/.git/FETCH_HEAD)
+# date -v-3M
+		fetchhead=$(stat -f %c $dotfiles/.git/FETCH_HEAD)
 	fi
-	echo "$now - $interval * 60 ?> $fetchhead"
 	if [ $((now-interval*60)) -gt $fetchhead ]
 		then
 		cd $dotfiles
-		git checkout $ghbranch
+		git checkout $ghbranch && \
+		touch $dotfiles/.git/LAST_PULL
 		head=$(git log --pretty=oneline | head -n 1 | cut -f1 -d' ')
 		git pull origin $ghbranch
 		git diff -U1 $head bin/dotfiles.sh
