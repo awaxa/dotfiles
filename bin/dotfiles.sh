@@ -49,7 +49,7 @@ else
 	cd $dotfiles
 	git checkout $ghbranch
 	head=$(git log --pretty=oneline | head -n 1 | cut -f1 -d' ')
-	git pull
+	git pull origin $ghbranch
 	git diff -U1 $head bin/dotfiles.sh
 fi
 cd $clonepath
