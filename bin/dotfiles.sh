@@ -31,7 +31,7 @@ then
 	then
 		curl -s https://raw.github.com/$ghuser/$ghrepo/master/README.md
 		echo ; echo
-		echo "This script will proceed to clone https://github.com/$ghuser/$ghrepo.git into your home directory and install symlinks to its contents in the appropriate places."o
+		echo "This script will proceed to clone https://github.com/$ghuser/$ghrepo.git into your home directory and install symlinks to its contents in the appropriate places."
 		echo "By default this will move your existing dotfiles to $backup/backup.\$filename.$tstamp and install symlinks in their place?"
 		read -p "Press enter to continue installing dotfiles in $HOME  " gogogo
 		echo "Beginning..."
