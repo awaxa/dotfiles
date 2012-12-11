@@ -60,6 +60,7 @@ else
 	then
 		fetchhead=$(stat -f %c $dotfiles/.git/FETCH_HEAD)
 	fi
+	echo "$now - $interval * 60 ?> $fetchhead"
 	if [ $((now-interval*60)) -gt $fetchhead ]
 		then
 		cd $dotfiles
