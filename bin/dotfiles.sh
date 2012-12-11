@@ -53,12 +53,12 @@ then
 else
 	update=0
 	fetchhead=0
-	if [ "$uname" == "Linux" ]
+	if [[ "$uname" == "Linux" ]]
 	then
-		fetchhead=$(stat -c %y $dotfiles/.git/FETCH_HEAD)
-	elif [ "$uname" == "Darwin" ]
+		fetchhead=$(/usr/bin/stat -c %y $dotfiles/.git/FETCH_HEAD)
+	elif [[ "$uname" == "Darwin" ]]
 	then
-		fetchhead=$(stat -f %c $dotfiles/.git/FETCH_HEAD)
+		fetchhead=$(/usr/bin/stat -f %c $dotfiles/.git/FETCH_HEAD)
 	fi
 	echo "$now - $interval * 60 ?> $fetchhead"
 	if [ $((now-interval*60)) -gt $fetchhead ]
