@@ -55,8 +55,8 @@ else
 	fetchhead=0
 	if [[ "$uname" == "Linux" ]]
 	then
-		stat -c %y $dotfiles/.git/FETCH_HEAD
-		fetchhead=$(/usr/bin/stat -c %y $dotfiles/.git/FETCH_HEAD)
+		stat -c %Y $dotfiles/.git/FETCH_HEAD
+		fetchhead=$(/usr/bin/stat -c %Y $dotfiles/.git/FETCH_HEAD)
 	elif [[ "$uname" == "Darwin" ]]
 	then
 		echo $(/usr/bin/stat -f %c $dotfiles/.git/FETCH_HEAD)
