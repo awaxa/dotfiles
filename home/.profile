@@ -8,15 +8,33 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
+function sagent {
+ssh-agent > ~/.ssh/agent
+chmod 600 ~/.ssh/agent
+source ~/.ssh/agent
+ssh-add ~/.ssh/*id_rsa
+}
+
+function kagent {
+pkill ssh-agent
+unset SSH_AUTH_SOCK SSH_AGENT_PID
+rm -f ~/.ssh/agent
+}
+
+export -f sagent kagent
+
 if [ -f "$HOME/.ssh/agent" ]; then
     . "$HOME/.ssh/agent"
 fi
+
 ssh-add -l &> /dev/null
 agentstatus=$?
-if [ $agentstatus -eq 1 ] ; then # 0 = identities >0, 1 = no identities, 2 = no agent
+if [ $agentstatus -eq 0 ] ; then
+    ssh-add -l
+elif [ $agentstatus -eq 1 ] ; then # 0 = identities >0, 1 = no identities, 2 = no agent
     ssh-add ~/.ssh/*id_rsa 
 elif [ $agentstatus -eq 2 ] ; then
-    ssh-agent > ~/.ssh/agent && chmod 600 ~/.ssh/agent && . ~/.ssh/agent && ssh-add ~/.ssh/*id_rsa
+    sagent
 fi
 
 $HOME/bin/dotfiles.sh

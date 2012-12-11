@@ -15,9 +15,9 @@ alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
 
-alias sagent='ssh-agent > ~/.ssh/agent && chmod 600 ~/.ssh/agent && source ~/.ssh/agent && ssh-add ~/.ssh/*id_rsa'
-alias agent='source ~/.ssh/agent'
-alias kagent='pkill ssh-agent ; unset SSH_AUTH_SOCK SSH_AGENT_PID ; rm -f ~/.ssh/agent'
+alias sagent=$sagent
+alias agent=$agent
+alias kagent=$kagent
 
 alias j='jobs'
 
@@ -36,4 +36,6 @@ alias rgrep='grep -rns --color=auto'
 
 alias rand='apg -a 0 -n 1 -m 16 -x 20 -M SNCL'
 alias randns='apg -a 0 -n 1 -m 16 -x 20 -M NCL'
+
+alias agent='ssh-add -l'
 
