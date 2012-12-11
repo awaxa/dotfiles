@@ -39,6 +39,7 @@ then
 		echo
 		cd $clonepath
 		git clone git://github.com/$ghuser/$ghrepo.git
+		git checkout $ghbranch
 	elif [ -d $dotfiles ]
 	then
 		echo "exception: $dotfiles exists but $dotfiles/.git does not"
