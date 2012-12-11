@@ -39,6 +39,7 @@ then
 		echo
 		cd $clonepath
 		git clone git://github.com/$ghuser/$ghrepo.git
+		cd $dotfiles
 		git checkout $ghbranch
 	elif [ -d $dotfiles ]
 	then
