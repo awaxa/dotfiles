@@ -16,6 +16,7 @@
         bv = branch -av
         co = checkout
         c = commit
+        dc = commit --dry-run
         m = commit -m
         am = commit -am
         d = diff
