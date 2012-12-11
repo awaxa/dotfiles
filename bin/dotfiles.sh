@@ -2,7 +2,7 @@
 
 ghuser="awaxa"
 ghrepo="dotfiles"
-ghbranch="master"
+ghbranch="script"
 
 clonepath=$HOME
 dotfiles=$clonepath/$ghrepo
