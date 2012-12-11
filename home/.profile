@@ -27,15 +27,22 @@ if [ -f "$HOME/.ssh/agent" ]; then
     . "$HOME/.ssh/agent"
 fi
 
-ssh-add -l &> /dev/null
+ssh-add -l > /dev/null
 agentstatus=$?
-if [ $agentstatus -eq 0 ] ; then
+case $agentstatus in
+0)
     ssh-add -l
-elif [ $agentstatus -eq 1 ] ; then # 0 = identities >0, 1 = no identities, 2 = no agent
+    ;;
+1) # 0 = identities >0, 1 = no identities, 2 = no agent
     ssh-add ~/.ssh/*id_rsa 
-elif [ $agentstatus -eq 2 ] ; then
+    ;;
+2)
     sagent
-fi
+    ;;
+*)
+    echo "exception: \`ssh-add -l\` reported an unexpected exit code: $agentstatus"
+    ;;
+esac
 
 $HOME/bin/dotfiles.sh
 
