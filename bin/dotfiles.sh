@@ -52,17 +52,21 @@ then
 	fi
 else
 	update=0
+	fetchhead=0
 	if [ "$uname" == "Linux" ]
 	then
 		fetchhead=$(stat -c %y $dotfiles/.git/FETCH_HEAD)
-		if [ $(($now-$interval*60)) -gt $fetchhead ]
-			then
-			cd $dotfiles
-			git checkout $ghbranch
-			head=$(git log --pretty=oneline | head -n 1 | cut -f1 -d' ')
-			git pull origin $ghbranch
-			git diff -U1 $head bin/dotfiles.sh
-		fi
+	elif [ "$uname" == "Darwin" ]
+	then
+		fetchhead=$(stat -f %c $dotfiles/.git/FETCH_HEAD)
+	fi
+	if [ $(($now-$interval*60)) -gt $fetchhead ]
+		then
+		cd $dotfiles
+		git checkout $ghbranch
+		head=$(git log --pretty=oneline | head -n 1 | cut -f1 -d' ')
+		git pull origin $ghbranch
+		git diff -U1 $head bin/dotfiles.sh
 	fi
 fi
 cd $clonepath
