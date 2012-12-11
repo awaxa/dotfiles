@@ -60,7 +60,7 @@ else
 	then
 		fetchhead=$(stat -f %c $dotfiles/.git/FETCH_HEAD)
 	fi
-	if [ $(($now-$interval*60)) -gt $fetchhead ]
+	if [ $((now-interval*60)) -gt $fetchhead ]
 		then
 		cd $dotfiles
 		git checkout $ghbranch
