@@ -6,4 +6,3 @@
 #    [ -x /usr/bin/clear_console ] && /usr/bin/clear_console -q
 #fi
 
-echo "hi from .bash_logout"
