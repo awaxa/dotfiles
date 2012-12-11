@@ -4,13 +4,18 @@ ghuser="awaxa"
 ghrepo="dotfiles"
 ghbranch="script"
 
+interval=1 # minutes after which to perform an autoupdate on login
+
 clonepath=$HOME
 dotfiles=$clonepath/$ghrepo
 backup=$dotfiles/backup
 tstamp=$(date +%Y.%m.%d-%H%M%S)
+now=$(date +%s)
 
 homeinstall="$dotfiles/home"
 autoinstall="$dotfiles/bin"
+
+uname=$(uname -a)
 
 curl --version &> /dev/null
 if [ $? -ne 0 ]
@@ -46,11 +51,19 @@ then
 		exit 1
 	fi
 else
-	cd $dotfiles
-	git checkout $ghbranch
-	head=$(git log --pretty=oneline | head -n 1 | cut -f1 -d' ')
-	git pull origin $ghbranch
-	git diff -U1 $head bin/dotfiles.sh
+	update=0
+	if [ "$uname" == "Linux" ]
+	then
+		fetchhead=$(stat -c %y $dotfiles/.git/FETCH_HEAD)
+		if [ $(($now-$interval*60)) -gt $fetchhead ]
+			then
+			cd $dotfiles
+			git checkout $ghbranch
+			head=$(git log --pretty=oneline | head -n 1 | cut -f1 -d' ')
+			git pull origin $ghbranch
+			git diff -U1 $head bin/dotfiles.sh
+		fi
+	fi
 fi
 cd $clonepath
 
