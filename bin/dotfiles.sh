@@ -2,6 +2,7 @@
 
 ghuser="awaxa"
 ghrepo="dotfiles"
+ghbranch="master"
 
 clonepath=$HOME
 dotfiles=$clonepath/$ghrepo
@@ -29,7 +30,7 @@ if [ ! -d $dotfiles/.git ]
 then
 	if [ ! -d $dotfiles ]
 	then
-		curl -s https://raw.github.com/$ghuser/$ghrepo/master/README.md
+		curl -s https://raw.github.com/$ghuser/$ghrepo/$ghbranch/README.md
 		echo ; echo
 		echo "This script will proceed to clone https://github.com/$ghuser/$ghrepo.git into your home directory and install symlinks to its contents in the appropriate places."
 		echo "By default this will move your existing dotfiles to $backup/backup.\$filename.$tstamp and install symlinks in their place?"
@@ -45,7 +46,7 @@ then
 	fi
 else
 	cd $dotfiles
-	git checkout master
+	git checkout $ghbranch
 	head=$(git log --pretty=oneline | head -n 1 | cut -f1 -d' ')
 	git pull
 	git diff -U1 $head bin/dotfiles.sh
