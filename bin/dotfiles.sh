@@ -2,7 +2,7 @@
 
 ghuser="awaxa"
 ghrepo="dotfiles"
-ghbranch="script"
+ghbranch="master"
 
 interval=0 # minutes since pull to perform an update, off by default
 
