@@ -2,11 +2,9 @@ if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 fi
 
-alias ls='ls --color=always'
-alias dir='dir --color=always'
-alias vdir='vdir --color=always'
-alias ll='ls -l'
 alias la='ls -A'
+alias ll='ls -l'
+alias lla='ls -lA'
 alias l='ls -CF'
 
 alias j='jobs'
