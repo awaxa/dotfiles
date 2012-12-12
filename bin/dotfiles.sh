@@ -52,7 +52,7 @@ then
 else
 	cd $dotfiles
 	git checkout $ghbranch
-	git pull origin $ghbranch
+	git pull #origin $ghbranch
 	git diff -U1 $head bin/dotfiles.sh
 
 fi
