@@ -12,4 +12,5 @@
 
 ### general
 * fix paths
+* post on reddit
 * always moar
