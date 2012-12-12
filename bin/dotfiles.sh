@@ -4,7 +4,7 @@ ghuser="awaxa"
 ghrepo="dotfiles"
 ghbranch="script"
 
-interval=1 # minutes after which to perform an autoupdate on login
+interval=1 # minutes since pull to perform an update
 
 clonepath=$HOME
 dotfiles=$clonepath/$ghrepo
