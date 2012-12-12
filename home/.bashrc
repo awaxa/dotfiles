@@ -78,7 +78,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 		. /etc/bash_completion 
 fi 
  
-for f in "$HOME/.ec2rc" "$HOME/.bash_aliases" "$HOME/bin/dotfiles.sh" ; do
+for f in "$home/.bash_aliases" "$home/bin/dotfiles.sh" "$home/.ec2rc" ; do
 	if [ -f "$f" ]; then 
 		. "$f"
 	fi 
