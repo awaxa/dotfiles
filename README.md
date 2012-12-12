@@ -3,8 +3,8 @@
 ### my dotfiles, including:
 * [the **king** of dotfiles install/update scripts](https://github.com/awaxa/dotfiles/blob/master/bin/dotfiles.sh "https://github.com/awaxa/dotfiles/blob/master/bin/dotfiles.sh")
   [![login screenshot](https://raw.github.com/awaxa/dotfiles/master/login.png)](https://raw.github.com/awaxa/dotfiles/master/login.png)
-  * [screenshot](https://raw.github.com/awaxa/dotfiles/master/screenshot.png "https://raw.github.com/awaxa/dotfiles/master/screenshot.png") of it in action
-    * the screenshots show verbosity that has since been silenced
+  * a bigger [screenshot](https://raw.github.com/awaxa/dotfiles/master/screenshot.png "https://raw.github.com/awaxa/dotfiles/master/screenshot.png") of *dotfiles.sh* in action
+    * the screenshots show verbosity that has since been silenced: `Already on 'master'`
   * [raw:dotfiles.sh](https://raw.github.com/awaxa/dotfiles/master/bin/dotfiles.sh "https://raw.github.com/awaxa/dotfiles/master/bin/dotfiles.sh") auto install/update script
   * **THIS COMMAND WON'T PROMPT YOU BEFORE MODIFYING DOTFILES IN $HOME**
   
