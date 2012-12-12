@@ -57,9 +57,9 @@ else
 	fetchhead=0
 	if [ "$uname" == "Darwin" ]
 	then
-		fetchhead=$(stat --format %Y $dotfiles/.git/FETCH_HEAD)
-	else # Linux
 		fetchhead=$(stat -f %c $dotfiles/.git/FETCH_HEAD)
+	else # Linux
+		fetchhead=$(stat --format %Y $dotfiles/.git/FETCH_HEAD)
 	fi
 	delta=$(($now - $fetchhead))
 	if [ $delta -gt $((interval * 60)) ]
