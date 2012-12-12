@@ -20,7 +20,7 @@
 	dc = commit --dry-run
 	dca = commit --dry-run -a
 	m = commit -m
-	am = commit -a -m
+#	am = commit -a -m # doesn't work on mac
 	d = diff
 	ds = diff --stat
 	l = log --oneline
