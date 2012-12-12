@@ -29,6 +29,11 @@ then
 	exit 1
 fi
 
+checkbranch() {
+tmp="$(git branch | grep \*)"
+[ "${tmp#* }" == "$ghbranch" ] || git checkout $ghbranch
+}
+
 if [ ! -d $dotfiles/.git ]
 then
 	if [ ! -d $dotfiles ]
@@ -43,7 +48,7 @@ then
 		cd $clonepath
 		git clone git://github.com/$ghuser/$ghrepo.git
 		cd $dotfiles
-		git checkout $ghbranch
+		checkbranch
 	elif [ -d $dotfiles ]
 	then
 		echo "exception: $dotfiles exists but $dotfiles/.git does not"
@@ -51,7 +56,7 @@ then
 	fi
 else
 	cd $dotfiles
-	git checkout $ghbranch
+	checkbranch
 	git pull #origin $ghbranch
 	git diff -U1 $head bin/dotfiles.sh
 
