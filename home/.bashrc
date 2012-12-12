@@ -87,6 +87,7 @@ then
 else # Linux/other
 	fetchhead=$(stat --format %Y $HOME/dotfiles/.git/FETCH_HEAD)
 fi
+now=$(date +%s)
 [ $(($now - $fetchhead)) -gt $((interval * 60)) ] && "$HOME/bin/dotfiles.sh"
  
 for f in "$HOME/.bash_$( uname -s | tr '[A-Z]' '[a-z]' )" "$HOME/.bash_aliases" "$HOME/.ec2rc" ; do
