@@ -2,15 +2,21 @@
 
 ghuser="awaxa"
 ghrepo="dotfiles"
-ghbranch="master"
+ghbranch="script"
+
+interval=1 # minutes since pull to perform an update
 
 clonepath=$HOME
 dotfiles=$clonepath/$ghrepo
 backup=$dotfiles/backup
 tstamp=$(date +%Y.%m.%d-%H%M%S)
+now=$(date +%s)
+#intervalfile=$dotfiles/.git/AUTOUPDATE_OLDERTHAN
 
 homeinstall="$dotfiles/home"
 autoinstall="$dotfiles/bin"
+
+uname=$( uname -s )
 
 curl --version &> /dev/null
 if [ $? -ne 0 ]
@@ -47,11 +53,24 @@ then
 		exit 1
 	fi
 else
-	cd $dotfiles
-	git checkout $ghbranch
-	head=$(git log --pretty=oneline | head -n 1 | cut -f1 -d' ')
-	git pull origin $ghbranch
-	git diff -U1 $head bin/dotfiles.sh
+	update=0
+	fetchhead=0
+	if [ "$uname" == "Darwin" ]
+	then
+		fetchhead=$(stat -f %c $dotfiles/.git/FETCH_HEAD)
+	else # Linux
+		fetchhead=$(stat --format %Y $dotfiles/.git/FETCH_HEAD)
+	fi
+	delta=$(($now - $fetchhead))
+	if [ $delta -gt $((interval * 60)) ]
+		then
+		cd $dotfiles
+		git checkout $ghbranch && \
+		touch $dotfiles/.git/LAST_PULL
+		head=$(git log --pretty=oneline | head -n 1 | cut -f1 -d' ')
+		git pull origin $ghbranch
+		git diff -U1 $head bin/dotfiles.sh
+	fi
 fi
 cd $clonepath
 
