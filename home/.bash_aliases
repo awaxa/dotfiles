@@ -15,10 +15,6 @@ alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
 
-alias sagent=$sagent
-alias agent=$agent
-alias kagent=$kagent
-
 alias j='jobs'
 
 alias pullm='git pull origin master'
@@ -36,6 +32,4 @@ alias rgrep='grep -rns --color=auto'
 
 alias rand='apg -a 0 -n 1 -m 16 -x 20 -M SNCL'
 alias randns='apg -a 0 -n 1 -m 16 -x 20 -M NCL'
-
-alias agent='ssh-add -l'
 
