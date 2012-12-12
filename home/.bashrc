@@ -93,7 +93,7 @@ if [ $(($now - $fetchhead)) -gt $((interval * 60)) ]
 then
 	if [ $UID -eq 0 ]
 	then
-		echo "$0 refuses to run $HOME/bin/dotfiles.sh automagically because you are root"
+		echo ".bashrc refuses to run $HOME/bin/dotfiles.sh automagically because you are root"
 	else
 		. "$HOME/bin/dotfiles.sh"
 	fi
