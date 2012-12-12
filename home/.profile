@@ -8,42 +8,6 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
-#function sagent(){
-#ssh-agent > ~/.ssh/agent
-#chmod 600 ~/.ssh/agent
-#source ~/.ssh/agent
-#ssh-add ~/.ssh/*id_rsa
-#}
-#
-#function kagent(){
-#pkill ssh-agent
-#unset SSH_AUTH_SOCK SSH_AGENT_PID
-#rm -f ~/.ssh/agent
-#}
-#
-#export -f sagent kagent
-#
-#if [ -f "$HOME/.ssh/agent" ]; then
-#    . "$HOME/.ssh/agent"
-#fi
-#
-#ssh-add -l > /dev/null
-#agentstatus=$?
-#case $agentstatus in
-#0)
-#    ssh-add -l
-#    ;;
-#1) # 0 = identities >0, 1 = no identities, 2 = no agent
-#    ssh-add ~/.ssh/*id_rsa 
-#    ;;
-#2)
-#    sagent
-#    ;;
-#*)
-#    echo "exception: \`ssh-add -l\` reported an unexpected exit code: $agentstatus"
-#    ;;
-#esac
-
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
