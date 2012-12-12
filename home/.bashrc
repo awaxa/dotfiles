@@ -77,8 +77,19 @@ esac
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then 
 		. /etc/bash_completion 
 fi 
+
+# dotfiles.sh auto update
+interval=1 # (minutes) interval between autoupdates on login
+fetchhead=0
+if [ "$( uname -s )" == "Darwin" ]
+then
+	fetchhead=$(stat -f %c $HOME/dotfiles/.git/FETCH_HEAD)
+else # Linux/other
+	fetchhead=$(stat --format %Y $HOME/dotfiles/.git/FETCH_HEAD)
+fi
+[ $(($now - $fetchhead)) -gt $((interval * 60)) ] && "$HOME/bin/dotfiles.sh"
  
-for f in "$HOME/.bash_$( uname -s | tr '[A-Z]' '[a-z]' )" "$HOME/.bash_aliases" "$HOME/bin/dotfiles.sh" "$HOME/.ec2rc" ; do
+for f in "$HOME/.bash_$( uname -s | tr '[A-Z]' '[a-z]' )" "$HOME/.bash_aliases" "$HOME/.ec2rc" ; do
 	if [ -f "$f" ]; then 
 		. "$f"
 	fi 
