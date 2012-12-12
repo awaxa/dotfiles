@@ -78,21 +78,9 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 		. /etc/bash_completion 
 fi 
  
-if [ -f "$HOME/.ec2rc" ]; then 
-	. "$HOME/.ec2rc" 
-fi 
-
-if [ -f $HOME/bin/dotfiles.sh ]; then
-	. "$HOME/bin/dotfiles.sh"
-fi
- 
-# Alias definitions. 
-# You may want to put all your additions into a separate file like 
-# ~/.bash_aliases, instead of adding them here directly. 
-# See /usr/share/doc/bash-doc/examples in the bash-doc package. 
- 
-if [ -f ~/.bash_aliases ]; then 
-	. ~/.bash_aliases 
-fi 
-
+for f in "$HOME/.ec2rc" "$HOME/.bash_aliases" "$HOME/bin/dotfiles.sh" ; do
+	if [ -f "$f" ]; then 
+		. "$f"
+	fi 
+done
 
