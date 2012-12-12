@@ -10,4 +10,5 @@
   * https://github.com/mxcl/homebrew/commits/master/Library/Formula/keychain.rb
 
 ### general
-* moar
+* fix paths
+* always moar
