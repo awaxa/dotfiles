@@ -16,9 +16,11 @@
         bv = branch -av
         co = checkout
         c = commit
+        ca = commit -a
         dc = commit --dry-run
+        dca = commit --dry-run -a
         m = commit -m
-        am = commit -am
+        am = commit -a -m
         d = diff
         ds = diff --stat
         l = log --oneline
