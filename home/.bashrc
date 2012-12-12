@@ -5,6 +5,8 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+interval=5 # (minutes) dotfiles.sh auto update interval
+
 # don't put duplicate lines in the history. See bash(1) for more options
 # don't overwrite GNU Midnight Commander's setting of `ignorespace'.
 #HISTCONTROL=$HISTCONTROL${HISTCONTROL+:}ignoredups
@@ -79,7 +81,6 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi 
 
 # dotfiles.sh auto update
-interval=1 # (minutes) interval between autoupdates on login
 fetchhead=0
 if [ "$( uname -s )" == "Darwin" ]
 then
