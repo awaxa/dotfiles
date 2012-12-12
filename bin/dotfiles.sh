@@ -11,12 +11,12 @@ dotfiles=$clonepath/$ghrepo
 backup=$dotfiles/backup
 tstamp=$(date +%Y.%m.%d-%H%M%S)
 now=$(date +%s)
-intervalfile=$dotfiles/.git/AUTOUPDATE_OLDERTHAN
+#intervalfile=$dotfiles/.git/AUTOUPDATE_OLDERTHAN
 
 homeinstall="$dotfiles/home"
 autoinstall="$dotfiles/bin"
 
-uname=$(uname -a)
+uname=$( uname -s )
 
 curl --version &> /dev/null
 if [ $? -ne 0 ]
@@ -54,16 +54,14 @@ then
 else
 	update=0
 	fetchhead=0
-	if [[ "$uname" == "Linux" ]]
+	if [ "$uname" == "Darwin" ]
 	then
-# date --date="-3 minutes"
 		fetchhead=$(stat --format %Y $dotfiles/.git/FETCH_HEAD)
-	elif [[ "$uname" == "Darwin" ]]
-	then
-# date -v-3M
+	else # Linux
 		fetchhead=$(stat -f %c $dotfiles/.git/FETCH_HEAD)
 	fi
-	if [ $((now-interval*60)) -gt $fetchhead ]
+	delta=$(($now - $fetchhead))
+	if [ $delta -gt $((interval * 60)) ]
 		then
 		cd $dotfiles
 		git checkout $ghbranch && \
