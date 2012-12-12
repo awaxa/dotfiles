@@ -89,8 +89,16 @@ else # Linux/other
 	fetchhead=$(stat --format %Y $HOME/dotfiles/.git/FETCH_HEAD)
 fi
 now=$(date +%s)
-[ $(($now - $fetchhead)) -gt $((interval * 60)) ] && "$HOME/bin/dotfiles.sh"
- 
+if [ $(($now - $fetchhead)) -gt $((interval * 60)) ]
+then
+	if [ $UID -eq 0 ]
+	then
+		echo "$0 refuses to run $HOME/bin/dotfiles.sh automagically because you are root"
+	else
+		. "$HOME/bin/dotfiles.sh"
+	fi
+fi
+
 for f in "$HOME/.bash_$( uname -s | tr '[A-Z]' '[a-z]' )" "$HOME/.bash_aliases" "$HOME/.ec2rc" ; do
 	if [ -f "$f" ]; then 
 		. "$f"
