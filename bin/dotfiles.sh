@@ -2,7 +2,7 @@
 
 ghuser="awaxa"
 ghrepo="dotfiles"
-ghbranch="master"
+ghbranch="script"
 
 dir=$PWD
 
