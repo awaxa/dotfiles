@@ -1,8 +1,9 @@
 # dotfiles - TODO.md
 
 ### branch: script
-* check age of last pull before running dotfiles.sh in `.bashrc`
 * use backup branch instead of directory
+* if root preview diffs
+  * option to escape before applying
 
 ### ssh-agent
 * http://www.gentoo.org/proj/en/keychain/
