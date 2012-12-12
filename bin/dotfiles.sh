@@ -57,6 +57,7 @@ then
 else
 	cd $dotfiles
 	checkbranch
+	head=$(git log --pretty=oneline | head -n 1 | cut -f1 -d' ')
 	git pull #origin $ghbranch
 	git diff -U1 $head bin/dotfiles.sh
 
