@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+[ "$1" == "-d" ] && set -vx # debug
+
 ghuser="awaxa"
 ghrepo="dotfiles"
 ghbranch="master"
