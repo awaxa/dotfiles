@@ -3,6 +3,7 @@
 
 ### branch: script
 * use backup branch instead of directory
+* check .gitignore in mv/ln operation
 * if root preview diffs
   * option to escape before applying
 
@@ -11,6 +12,5 @@
   * https://github.com/mxcl/homebrew/commits/master/Library/Formula/keychain.rb
 
 ### general
-* fix paths
 * post on reddit
 * always moar
