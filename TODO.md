@@ -3,7 +3,6 @@
 
 ### branch: script
 * use backup branch instead of directory
-* check .gitignore in mv/ln operation
 * if root preview diffs
   * option to escape before applying
 
