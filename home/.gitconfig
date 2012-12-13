@@ -9,11 +9,12 @@
 	diff = auto
 	status = auto
 	branch = auto
+	interactive = auto
 [alias]
 	a = add
-	all = add -A
+	aa = add -A
 	b = branch
-	bv = branch -av
+	bv = branch -avv
 	co = checkout
 	c = commit
 	ca = commit -a
@@ -23,7 +24,18 @@
 #	am = commit -a -m # doesn't work on mac
 	d = diff
 	ds = diff --stat
-	l = log --oneline
+	l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	l1 = log --pretty=oneline
 	ll = log
 	s = status
+	sl = stash list
+	fa = fetch --all
+	fe = fetch
+	cp = cherry-pick
+	rc = rebase --continue
+	rs = rebase --skip
+	ri = rebase --interactive
+	ra = rebase --abort
+	rh = reset --hard
+	fixup = commit --amend -CHEAD
+
