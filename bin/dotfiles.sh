@@ -79,6 +79,8 @@ done
 
 for f in $filelist
 do
+	echo $f | grep -q -f $dotfiles/.gitignore && continue
+	
 	if [ $(expr "$(readlink $clonepath/$f)" : "$dotfiles.*$f") -ge ${#dotfiles} ]
 	then
 		continue
