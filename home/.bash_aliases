@@ -31,3 +31,6 @@ alias rgrep='grep -rns --color=auto'
 alias rand='apg -a 0 -n 1 -m 16 -x 20 -M SNCL'
 alias randns='apg -a 0 -n 1 -m 16 -x 20 -M NCL'
 
+alias tml='tmux ls'
+alias tmls='tmux ls'
+
