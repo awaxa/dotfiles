@@ -33,7 +33,7 @@ alias randns='apg -a 0 -n 1 -m 16 -x 20 -M NCL'
 
 alias tml='tmux ls'
 alias tmls='tmux ls'
-alias tma='tmux attach-session -t'
-alias tmda='tmux attach-session -d -t'
-alias tmn='tmux new-session -s'
+alias tma='tmux -2 attach-session -t'
+alias tmda='tmux -2 attach-session -d -t'
+alias tmn='tmux -2 new-session -s'
 
