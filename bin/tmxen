@@ -8,7 +8,7 @@ isrunning=$?
 
 if [ $isrunning -eq 1 ] # false
 then
-	tmux new-session -d -s $sessionname
+	tmux -2 new-session -d -s $sessionname
 	i=2 
 	#tmux new-window -t $sessionname:$i -n "$(hostname)" '/bin/bash'
 	#i=$(( $i+1 ))
