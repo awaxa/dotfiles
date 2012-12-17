@@ -4,9 +4,10 @@ fi
 
 alias la='ls -A'
 alias ll='ls -l'
-alias lla='ls -lA'
+alias lla='ls -lhA'
+alias llh='ls -lAhSr'
 alias ltr='ls -Atr'
-alias lltr='ls -Altr'
+alias lltr='ls -Alhtr'
 alias ltr1='ls -Atr1'
 alias l='ls -C'
 
