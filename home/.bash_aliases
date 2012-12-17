@@ -6,7 +6,7 @@ alias la='ls -A'
 alias ll='ls -l'
 alias lla='ls -lA'
 alias ltr='ls -Atr'
-alias lltr='ls -Atr'
+alias lltr='ls -Altr'
 alias ltr1='ls -Atr1'
 alias l='ls -CF'
 
