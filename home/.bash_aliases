@@ -8,7 +8,7 @@ alias lla='ls -lA'
 alias ltr='ls -Atr'
 alias lltr='ls -Altr'
 alias ltr1='ls -Atr1'
-alias l='ls -CF'
+alias l='ls -C'
 
 alias j='jobs'
 
