@@ -3,6 +3,8 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 alias la='ls -A'
+alias lsd='ls -d */'
+alias lsda='ls -Ad */ .*/'
 alias ll='ls -l'
 alias lla='ls -lhA'
 alias llh='ls -lAhSr'
@@ -51,3 +53,4 @@ alias resource='source ~/.bashrc'
 
 alias mkcd='_(){ mkdir $1; cd $1; }; _'
 
+alias hgrep='cat ~/.bash_history | grep'
