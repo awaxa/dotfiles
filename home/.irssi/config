@@ -167,6 +167,9 @@ aliases = {
   dbd = "/msg -freenode diabot do #reddit-diabetes";
   uft = "/me ┬──┬ ノ( ゜-゜ノ)";
   dbf = "/msg -freenode diabot say #reddit-diabetes [flair]";
+  cs = "msg chanserv";
+  ns = "msg nickserv $-";
+  znc = "msg *status $-";
 };
 
 statusbar = {
