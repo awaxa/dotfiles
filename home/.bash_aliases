@@ -38,3 +38,16 @@ alias tma='tmux -2 attach-session -t'
 alias tmda='tmux -2 attach-session -d -t'
 alias tmn='tmux -2 new-session -s'
 
+alias ..='cd ..'
+alias ...='cd ...'
+alias ....='cd ....'
+alias .....='cd .....'
+
+alias ff='find . -iname'
+
+alias pyhttp='python -m SimpleHTTPServer'
+
+alias resource='source ~/.bashrc'
+
+alias mkcd='_(){ mkdir $1; cd $1; }; _'
+
