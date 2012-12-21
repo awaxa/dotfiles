@@ -1,0 +1,1 @@
+/usr/share/irssi/scripts/splitlong.pl
