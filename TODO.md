@@ -1,6 +1,9 @@
 # dotfiles - TODO.md
 ---
 
+### scripts
+* ec2 credential switcher
+
 ### branch: script
 * use backup branch instead of directory
 * if root preview diffs
