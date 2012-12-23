@@ -98,5 +98,5 @@ formats = {
     whois_idle = " idle        :%W $0%n%";
     whois_fingerprint = " fingerprint :%c $0%n%:End of WHOIS";
   };
-  "fe-common/core" = { pubmsg = "{pubmsgnick $2 {pubnick \00307$0}}$1"; };
+  "fe-common/core" = { pubmsg = "{pubmsgnick $2 {pubnick \00313$0}}$1"; };
 };
