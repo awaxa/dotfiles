@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
+[ "$1" == "-d" ] && set -vx # debug
+
 conf=$HOME/.nsupdate-aws.conf
+
+checks=( "http://checkip.dyndns.org/" "http://icanhazip.com" "http://ifconfig.me" )
 
 if [ -f $conf ]
 then
@@ -45,8 +49,9 @@ fi
 IPREGEX='[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}'
 
 #ip=$(curl -s "http://$ddwrt/" | grep WAN | egrep -o $IPREGEX) #scrape IP from dd-wrt status page
-#checks=( "http://checkip.dyndns.org/" "http://icanhazip.com" "http://ifconfig.me" )
-ip=$(curl -s "http://checkip.dyndns.org/" | egrep -o $IPREGEX)
+i=$RANDOM ; let "i %= ${#checks[@]}"
+check=${checks[$i]}
+ip=$(curl -s $check | egrep -o $IPREGEX)
 
 dig=$(dig +short +trace $record.$zone. | grep ^A | cut -f2 -d' ')
 
