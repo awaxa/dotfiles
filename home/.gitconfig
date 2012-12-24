@@ -37,5 +37,9 @@
 	ri = rebase --interactive
 	ra = rebase --abort
 	rh = reset --hard
+	f = commit --amend -CHEAD
 	fixup = commit --amend -CHEAD
+	amend = commit --amend
+	r = commit --amend
+	reword = commit --amend
 
