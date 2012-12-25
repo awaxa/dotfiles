@@ -105,5 +105,8 @@ for f in "$HOME/.bash_$( uname -s | tr '[A-Z]' '[a-z]' )" "$HOME/.bash_aliases" 
 	fi 
 done
 
-PAGER=$(command -v most) && export PAGER
-
+lesspipefound=0
+lesspipe=$( command -v lesspipe )
+lesspipefound=$?
+[ $lesspipefound -eq 0 ] || lesspipe=$( command -v lesspipe.sh )
+[ $lesspipefound -eq 0 ] && export LESSOPEN="|$lesspipe %s"
