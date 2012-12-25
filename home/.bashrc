@@ -105,3 +105,5 @@ for f in "$HOME/.bash_$( uname -s | tr '[A-Z]' '[a-z]' )" "$HOME/.bash_aliases" 
 	fi 
 done
 
+PAGER=$(command -v most) && export PAGER
+
