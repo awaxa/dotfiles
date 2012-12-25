@@ -2,3 +2,20 @@ alias ls='ls --color=always'
 alias dir='dir --color=always'
 alias vdir='vdir --color=always'
 
+# dotfiles.sh auto update
+fetchhead=0
+#fetchhead=$(stat -f %c $HOME/dotfiles/.git/FETCH_HEAD) # Darwin
+fetchhead=$(stat --format %Y $HOME/dotfiles/.git/FETCH_HEAD) # Linux/other
+now=$(date +%s)
+if [ $(($now - $fetchhead)) -gt $((interval * 60)) ]
+then
+	if [ $UID -eq 0 ]
+	then
+		echo ".bashrc refuses to run $HOME/bin/dotfiles.sh automagically because you are root"
+	else
+		. "$HOME/bin/dotfiles.sh"
+	fi
+fi
+
+lesspipe=$( command -v lesspipe ) && export LESSOPEN="|$lesspipe %s"
+

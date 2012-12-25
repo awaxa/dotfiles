@@ -80,33 +80,9 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 		. /etc/bash_completion 
 fi 
 
-# dotfiles.sh auto update
-fetchhead=0
-if [ "$( uname -s )" == "Darwin" ]
-then
-	fetchhead=$(stat -f %c $HOME/dotfiles/.git/FETCH_HEAD)
-else # Linux/other
-	fetchhead=$(stat --format %Y $HOME/dotfiles/.git/FETCH_HEAD)
-fi
-now=$(date +%s)
-if [ $(($now - $fetchhead)) -gt $((interval * 60)) ]
-then
-	if [ $UID -eq 0 ]
-	then
-		echo ".bashrc refuses to run $HOME/bin/dotfiles.sh automagically because you are root"
-	else
-		. "$HOME/bin/dotfiles.sh"
-	fi
-fi
-
 for f in "$HOME/.bash_$( uname -s | tr '[A-Z]' '[a-z]' )" "$HOME/.bash_aliases" "$HOME/.ec2rc" ; do
 	if [ -f "$f" ]; then 
 		. "$f"
 	fi 
 done
 
-lesspipefound=0
-lesspipe=$( command -v lesspipe )
-lesspipefound=$?
-[ $lesspipefound -eq 0 ] || lesspipe=$( command -v lesspipe.sh )
-[ $lesspipefound -eq 0 ] && export LESSOPEN="|$lesspipe %s"
