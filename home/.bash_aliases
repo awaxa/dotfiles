@@ -59,3 +59,5 @@ alias colors='for i in {0..255} ; do printf "\x1b[38;5;${i}mcolour${i}\n"; done'
 alias which='command -v'
 
 most=$(command -v most) && alias man="PAGER=$most man"
+
+alias ec2killall='for i in $( ec2din | grep running | cut -f2 ) ; do ec2kill $i & done'
