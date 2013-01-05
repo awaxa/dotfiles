@@ -7,12 +7,10 @@
 
 interval=60 # (minutes) dotfiles.sh auto update interval
 
-#  Customize BASH PS1 prompt to show current GIT repository and branch.
-#  by Mike Stewart - http://MediaDoneRight.com
 
 #  SETUP CONSTANTS
 #  Bunch-o-predefined colors.  Makes reading code easier than escape sequences.
-#  I don't remember where I found this.  o_O
+#  http://mediadoneright.com/content/ultimate-git-ps1-bash-prompt
 
 # Reset
 Color_Off="\[\033[0m\]"       # Text Reset
@@ -96,24 +94,6 @@ NewLine="\n"
 Jobs="\j"
 
 
-# This PS1 snippet was adopted from code for MAC/BSD I saw from: http://allancraig.net/index.php?option=com_content&view=article&id=108:ps1-export-command-for-git&catid=45:general&Itemid=96
-# I tweaked it to work on UBUNTU 11.04 & 11.10 plus made it mo' better
-
-export PS1=$IBlack$Time12h$Color_Off'$(git branch &>/dev/null;\
-if [ $? -eq 0 ]; then \
-  echo "$(echo `git status` | grep "nothing to commit" > /dev/null 2>&1; \
-  if [ "$?" -eq "0" ]; then \
-    # @4 - Clean repository - nothing to commit
-    echo "'$Green'"$(__git_ps1 " (%s)"); \
-  else \
-    # @5 - Changes to working tree
-    echo "'$IRed'"$(__git_ps1 " {%s}"); \
-  fi) '$BYellow$PathShort$Color_Off'\$ "; \
-else \
-  # @2 - Prompt when not in GIT repo
-  echo " '$Yellow$PathShort$Color_Off'\$ "; \
-fi)'
-
 # don't put duplicate lines in the history. See bash(1) for more options
 # don't overwrite GNU Midnight Commander's setting of `ignorespace'.
 #HISTCONTROL=$HISTCONTROL${HISTCONTROL+:}ignoredups
@@ -160,6 +140,24 @@ if [ "$color_prompt" = yes ]; then
 	#PS1='\[\033[32m\]\u@\h\[\033[00m\]:\[\033[34m\]\w\[\033[00m\]\$ '
 	PS1='\[\033[33m\]\u\[\033[32m\]@\[\033[36m\]\h\[\033[00m\]:\[\033[34m\]\w\[\033[00m\]\$ '
 	[ `id -u` -eq 0 ] && PS1='\[\033[31m\]\u\[\033[32m\]@\[\033[36m\]\h\[\033[00m\]:\[\033[34m\]\w\[\033[00m\]\$ '
+
+	# This PS1 snippet was adopted from code for MAC/BSD I saw from: http://allancraig.net/index.php?option=com_content&view=article&id=108:ps1-export-command-for-git&catid=45:general&Itemid=96
+	# I tweaked it to work on UBUNTU 11.04 & 11.10 plus made it mo' better
+	#export PS1=$IBlack$Time12h$Color_Off'$(git branch &>/dev/null;\
+	#if [ $? -eq 0 ]; then \
+	#  echo "$(echo `git status` | grep "nothing to commit" > /dev/null 2>&1; \
+	#  if [ "$?" -eq "0" ]; then \
+	#    # @4 - Clean repository - nothing to commit
+	#    echo "'$Green'"$(__git_ps1 " (%s)"); \
+	#  else \
+	#    # @5 - Changes to working tree
+	#    echo "'$IRed'"$(__git_ps1 " {%s}"); \
+	#  fi) '$BYellow$PathShort$Color_Off'\$ "; \
+	#else \
+	#  # @2 - Prompt when not in GIT repo
+	#  echo " '$Yellow$PathShort$Color_Off'\$ "; \
+	#fi)'
+
 else
 	PS1='\u@\h:\w\$ '
 fi
