@@ -138,6 +138,9 @@ if [ -n "$force_color_prompt" ]; then
 	fi
 fi
 
+export GIT_PS1_SHOWDIRTYSTATE=true
+export GIT_PS1_SHOWUNTRACKEDFILES=true
+
 if [ "$color_prompt" = yes ]; then
 	UserColor="$Yellow"
 	[ $UID -eq 0 ] && UserColor="$Red"
