@@ -61,9 +61,13 @@ else
 	checkbranch
 	head=$(git log --pretty=oneline | head -n 1 | cut -f1 -d' ')
 	git pull #origin $ghbranch
-	[ "$head" == "$(git log --pretty=oneline | head -n 1 | cut -f1 -d' ')" ] || echo "changed:  https://github.com/awaxa/dotfiles/compare/$head...HEAD"
-	git diff -U1 $head bin/dotfiles.sh
-
+	if [ ! "$head" == "$(git log --pretty=oneline | head -n 1 | cut -f1 -d' ')" ]
+	then
+		echo "changed:  https://github.com/awaxa/dotfiles/compare/$head...HEAD"
+		git diff -U1 $head bin/dotfiles.sh
+		source ~/.bashrc
+		exit 0
+	fi
 fi
 cd $clonepath
 
