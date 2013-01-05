@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
 vim $*
+git diff
+read -p "press enter to add/commit" dontcare
 git add $*
 git commit
