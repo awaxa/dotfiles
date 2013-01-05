@@ -19,7 +19,7 @@ alias pullm='git pull origin master'
 alias pull="git branch | \grep '*' | sed 's/* //' | xargs git pull origin"
 alias push="git branch | \grep '*' | sed 's/* //' | xargs git push origin"
 
-alias grep='grep --color=always'
+alias grep='grep --color=auto'
 alias fgrep='fgrep --color=always'
 alias egrep='egrep --color=always'
 alias grep_red='GREP_COLOR="1;31" \grep --color=always --line-buffered'
