@@ -13,14 +13,13 @@ interval=5 # (minutes) dotfiles.sh auto update interval
 # ... or force ignoredups and ignorespace
 HISTCONTROL=ignoreboth
 
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 unset HISTFILESIZE
 export HISTSIZE=500000
 export PROMPT_COMMAND="history -a"
 
 # append to the history file, don't overwrite it
 shopt -s histappend
-
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
