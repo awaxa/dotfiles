@@ -137,9 +137,8 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-	#PS1='\[\033[32m\]\u@\h\[\033[00m\]:\[\033[34m\]\w\[\033[00m\]\$ '
-	PS1='\[\033[33m\]\u\[\033[32m\]@\[\033[36m\]\h\[\033[00m\]:\[\033[34m\]\w\[\033[00m\]\$ '
-	[ `id -u` -eq 0 ] && PS1='\[\033[31m\]\u\[\033[32m\]@\[\033[36m\]\h\[\033[00m\]:\[\033[34m\]\w\[\033[00m\]\$ '
+	PS1="$Yellow\ui$Green@$Cyan\h$Color_Off:$Blue$PathShort$Color_Off\$ "
+	[ `id -u` -eq 0 ] && PS1="$Red\ui$Green@$Cyan\h$Color_Off:$Blue$PathShort$Color_Off\$ "
 
 	# This PS1 snippet was adopted from code for MAC/BSD I saw from: http://allancraig.net/index.php?option=com_content&view=article&id=108:ps1-export-command-for-git&catid=45:general&Itemid=96
 	# I tweaked it to work on UBUNTU 11.04 & 11.10 plus made it mo' better
