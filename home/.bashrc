@@ -92,7 +92,8 @@ PathShort="\w"
 PathFull="\W"
 NewLine="\n"
 Jobs="\j"
-
+User="\u"
+Host="\h"
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # don't overwrite GNU Midnight Commander's setting of `ignorespace'.
@@ -137,8 +138,8 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-	PS1="$Yellow\ui$Green@$Cyan\h$Color_Off:$Blue$PathShort$Color_Off\$ "
-	[ `id -u` -eq 0 ] && PS1="$Red\ui$Green@$Cyan\h$Color_Off:$Blue$PathShort$Color_Off\$ "
+	PS1="$Yellow$User$Green@$Cyan$Host$Color_Off:$Blue$PathShort$Color_Off\$ "
+	[ `id -u` -eq 0 ] && PS1="$Red$User$Green@$Cyan$Host$Color_Off:$Blue$PathShort$Color_Off\$ "
 
 	# This PS1 snippet was adopted from code for MAC/BSD I saw from: http://allancraig.net/index.php?option=com_content&view=article&id=108:ps1-export-command-for-git&catid=45:general&Itemid=96
 	# I tweaked it to work on UBUNTU 11.04 & 11.10 plus made it mo' better
