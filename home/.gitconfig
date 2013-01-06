@@ -28,6 +28,7 @@
 	l1 = log --pretty=oneline
 	ll = log
 	s = status
+	sh = show
 	sl = stash list
 	fa = fetch --all
 	fe = fetch
