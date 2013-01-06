@@ -144,7 +144,7 @@ export GIT_PS1_SHOWUNTRACKEDFILES=true
 if [ "$color_prompt" = yes ]; then
 	UserColor="$Yellow"
 	[ $UID -eq 0 ] && UserColor="$Red"
-	PS1="$IBlack$Time24h $Jobs $UserColor$User$Green@$Cyan$Host$Color_Off:$Blue$PathShort$IBlack\$( __git_ps1 \" (%s)\" ) $Color_Off\$ "
+	PS1="$IBlack$Time24h $Jobs $UserColor$User$Green@$Cyan$Host$Color_Off:$Blue$PathShort$Red\$( __git_ps1 \" (%s)\" ) $Color_Off\$ "
 else
 	PS1='\u@\h:\w\$ '
 fi
