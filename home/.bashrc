@@ -144,7 +144,7 @@ export GIT_PS1_SHOWUNTRACKEDFILES=true
 if [ "$color_prompt" = yes ]; then
 	UserColor="$Yellow"
 	[ $UID -eq 0 ] && UserColor="$Red"
-	PS1="$IBlack$Time24h $Jobs $UserColor$User$Green@$Cyan$Host$Color_Off:$Blue$PathShort$IBlack$(__git_ps1 " (%s)") $Color_Off\$ "
+	PS1="$IBlack$Time24h $Jobs $UserColor$User$Green@$Cyan$Host$Color_Off:$Blue$PathShort$Color_Off \$ "
 
 	# This PS1 snippet was adopted from code for MAC/BSD I saw from: http://allancraig.net/index.php?option=com_content&view=article&id=108:ps1-export-command-for-git&catid=45:general&Itemid=96
 	# I tweaked it to work on UBUNTU 11.04 & 11.10 plus made it mo' better
