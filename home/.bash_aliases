@@ -58,7 +58,17 @@ alias colors='for i in {0..255} ; do printf "\x1b[38;5;${i}mcolour${i}\n"; done'
 
 alias which='command -v'
 
-most=$(command -v most) && alias man="PAGER=$most man"
+man() {
+	env \
+		LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+		LESS_TERMCAP_md=$(printf "\e[1;31m") \
+		LESS_TERMCAP_me=$(printf "\e[0m") \
+		LESS_TERMCAP_se=$(printf "\e[0m") \
+		LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+		LESS_TERMCAP_ue=$(printf "\e[0m") \
+		LESS_TERMCAP_us=$(printf "\e[1;32m") \
+			man "$@"
+}
 
 alias ec2killall='for i in $( ec2din | grep running | cut -f2 ) ; do ec2kill $i & done'
 alias ec2hosts='ec2din | grep running | cut -f4'
