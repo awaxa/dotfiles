@@ -65,7 +65,6 @@ else
 	then
 		echo "changed:  https://github.com/awaxa/dotfiles/compare/$head...HEAD"
 		git diff -U1 $head bin/dotfiles.sh
-		exit 0
 	fi
 fi
 cd $clonepath
