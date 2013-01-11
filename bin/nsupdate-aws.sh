@@ -4,7 +4,7 @@
 
 conf=$HOME/.nsupdate-aws.conf
 
-checks=( "http://checkip.dyndns.org/" "http://icanhazip.com" "http://ifconfig.me" )
+checks=( "http://icanhazip.com" "http://ifconfig.me" )
 
 if [ -f $conf ]
 then
