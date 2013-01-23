@@ -86,11 +86,11 @@ Subsystem sftp internal-sftp -l VERBOSE
 # and ChallengeResponseAuthentication to 'no'.
 UsePAM yes
 
+UseDNS no
+
 Match group sftpusers
 	ForceCommand internal-sftp
         PasswordAuthentication yes
         ChrootDirectory /home/%u
         X11Forwarding no
         AllowTcpForwarding no
-
-UseDNS no
