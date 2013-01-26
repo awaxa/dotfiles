@@ -50,8 +50,12 @@ IPREGEX='[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}'
 
 #ip=$(curl -s "http://$ddwrt/" | grep WAN | egrep -o $IPREGEX) #scrape IP from dd-wrt status page
 i=$RANDOM
-let "i %= ${#checks[@]}"
-ip=$(curl -s ${checks[$i]} | egrep -o $IPREGEX)
+until echo $IP | egrep -q -o $IPREGEX
+do
+	let "i %= ${#checks[@]}"
+	ip=$(curl -s ${checks[$i]} | egrep -o $IPREGEX)
+	let i++
+done
 
 dig=$(dig +short +trace $record.$zone. | grep ^A | cut -f2 -d' ')
 
