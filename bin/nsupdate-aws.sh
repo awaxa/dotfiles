@@ -4,7 +4,7 @@
 
 conf=$HOME/.nsupdate-aws.conf
 
-checks=( "http://checkip.dyndns.org/" "http://icanhazip.com" "http://ifconfig.me" )
+check="http://ip.awaxa.com"
 
 if [ -f $conf ]
 then
@@ -46,16 +46,9 @@ export ttl=$ttl"
 	exit 0 
 fi
 
-IPREGEX='[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}'
+#IPREGEX='[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}'
 
-#ip=$(curl -s "http://$ddwrt/" | grep WAN | egrep -o $IPREGEX) #scrape IP from dd-wrt status page
-i=$RANDOM
-until echo $IP | egrep -q -o $IPREGEX
-do
-	let "i %= ${#checks[@]}"
-	ip=$(curl -s ${checks[$i]} | egrep -o $IPREGEX)
-	let i++
-done
+ip=$(curl -s $check)
 
 dig=$(dig +short +trace $record.$zone. | grep ^A | cut -f2 -d' ')
 
