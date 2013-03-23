@@ -4,7 +4,7 @@
 
 conf=$HOME/.nsupdate-aws.conf
 
-check="http://ip.awaxa.com"
+check="http://ifconfig.me"
 
 if [ -f $conf ]
 then
