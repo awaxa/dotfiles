@@ -48,9 +48,9 @@ fi
 
 IPREGEX='[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}'
 
-ip=$(curl -s $check)
+myip=$(curl -s $check)
 
-echo $ip | grep -Eq $IPREGEX
+ip=$(echo $myip | grep -E $IPREGEX)
 valid=$?
 if [ $valid -ne 0 ] ; then
 	echo invalid response from $check
