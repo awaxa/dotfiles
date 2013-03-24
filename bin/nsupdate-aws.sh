@@ -16,7 +16,6 @@ then
 else
 	response=""
 	cli53=/usr/local/bin/cli53
-	ddwrt=""
 	AWS_ACCESS_KEY_ID=""
 	AWS_SECRET_ACCESS_KEY=""
 	zone="awaxa.net"
@@ -26,7 +25,6 @@ else
 	echo "Please configure nsupdate-aws.sh"
 	read -p "cli53 path (default=$cli53): " response
 	[ ! $response = "" ] && cli53=$response
-	read -p "dd-wrt IP address (default=$cli53): " ddwrt
 	read -p "AWS_ACCESS_KEY_ID (default=$AWS_ACCESS_KEY_ID): " AWS_ACCESS_KEY_ID
 	read -p "AWS_SECRET_ACCESS_KEY (default=$AWS_SECRET_ACCESS_KEY): " AWS_SECRET_ACCESS_KEY
 	read -p "zone (default=$zone): " response
