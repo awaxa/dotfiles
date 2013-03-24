@@ -46,9 +46,16 @@ export ttl=$ttl"
 	exit 0 
 fi
 
-#IPREGEX='[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}'
+IPREGEX='[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}'
 
 ip=$(curl -s $check)
+
+echo $ip | grep -Eq $IPREGEX
+valid=$?
+if [ $valid -ne 0 ] ; then
+	echo invalid response from $check
+	exit 0
+fi
 
 dig=$(dig +short +trace $record.$zone. | grep ^A | cut -f2 -d' ')
 
