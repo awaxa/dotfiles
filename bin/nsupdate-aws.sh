@@ -53,7 +53,7 @@ myip=$(curl -s $check)
 ip=$(echo $myip | grep -E $IPREGEX)
 valid=$?
 if [ $valid -ne 0 ] ; then
-	echo invalid response from $check
+	echo $0 $(date) invalid response from $check
 	exit 0
 fi
 
@@ -61,7 +61,7 @@ dig=$(dig +short +trace $record.$zone. | grep ^A | cut -f2 -d' ')
 
 update="$cli53 rrcreate $zone $record A $ip --ttl $ttl --replace"
 if [ "$1" == "-f" ] || [ "$ip" != "$dig" ] ; then
-	echo $update
+	echo $0 $(date) $update
 	$update
 fi
 
