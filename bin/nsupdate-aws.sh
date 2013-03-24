@@ -59,6 +59,8 @@ fi
 
 dig=$(dig +short +trace $record.$zone. | grep ^A | cut -f2 -d' ')
 
+echo $0 $(date) curl=$ip dig=$ip
+
 update="$cli53 rrcreate $zone $record A $ip --ttl $ttl --replace"
 if [ "$1" == "-f" ] || [ "$ip" != "$dig" ] ; then
 	echo $0 $(date) $update
