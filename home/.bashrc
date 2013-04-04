@@ -172,3 +172,4 @@ for f in "$HOME/.bash_$( uname -s | tr '[A-Z]' '[a-z]' )" "$HOME/.bash_aliases" 
 	fi 
 done
 
+export GPGKEY="E9143AC9"
