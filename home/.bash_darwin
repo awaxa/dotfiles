@@ -22,3 +22,5 @@ then
 fi
 
 lesspipe=$( command -v lesspipe.sh ) && export LESSOPEN="|$lesspipe %s"
+
+eval "$(rbenv init -)"
