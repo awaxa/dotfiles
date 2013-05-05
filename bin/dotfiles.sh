@@ -89,7 +89,7 @@ do
 		continue
 	elif [ -a $clonepath/$f ]
 	then
-		[ $f = ".ssh/authorized_keys" ] || mv -v $clonepath/$f $backup/$f.$tstamp
+		[ $f = ".ssh/authorized_keys" ] && [ -f $clonepath/$f ] || mv -v $clonepath/$f $backup/$f.$tstamp
 	fi
 
 	if [ -f $homeinstall/$f ]
