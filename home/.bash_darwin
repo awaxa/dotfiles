@@ -7,9 +7,9 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
 fi
 
 # dotfiles.sh auto update
+fetchhead=$(stat -f %c $HOME/dotfiles/.git/FETCH_HEAD) || # Darwin
+#fetchhead=$(stat --format %Y $HOME/dotfiles/.git/FETCH_HEAD) || # Linux/other
 fetchhead=0
-fetchhead=$(stat -f %c $HOME/dotfiles/.git/FETCH_HEAD) # Darwin
-#fetchhead=$(stat --format %Y $HOME/dotfiles/.git/FETCH_HEAD) # Linux/other
 now=$(date +%s)
 if [ $(($now - $fetchhead)) -gt $((interval * 60)) ]
 then
