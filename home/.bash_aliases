@@ -72,3 +72,4 @@ man() {
 
 alias ec2killall='for i in $( ec2din | grep running | cut -f2 ) ; do ec2kill $i & done'
 alias ec2hosts='ec2din | grep running | cut -f4'
+alias veewee='bundle exec veewee'
