@@ -25,15 +25,6 @@ export PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-	PS1="\[\e]0;\u@\h: \w\a\]$PS1"
-	;;
-*)
-	;;
-esac
-
 export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
 
@@ -129,3 +120,12 @@ Host="\h"
 UserColor="$Yellow"
 [ $UID -eq 0 ] && UserColor="$Red"
 PS1="$IBlack$Time24h $Jobs $UserColor$User$Green@$IYellow$Host$Color_Off:$Cyan$PathShort$Red\$( __git_ps1 \" (%s)\" ) $Color_Off\$ "
+
+# If this is an xterm set the title to user@host:dir
+case "$TERM" in
+xterm*|rxvt*)
+	PS1="\[\e]0;\u@\h: \w\a\]$PS1"
+	;;
+*)
+	;;
+esac
