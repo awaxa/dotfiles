@@ -1,6 +1,0 @@
-alias ls='ls --color=always'
-alias dir='dir --color=always'
-alias vdir='vdir --color=always'
-
-lesspipe=$( command -v lesspipe ) && export LESSOPEN="|$lesspipe %s"
-
