@@ -21,7 +21,7 @@
 	dc = commit --dry-run
 	dca = commit --dry-run -a
 	m = commit -m
-#	am = commit -a -m # doesn't work on mac
+	cam = commit -a -m
 	d = diff
 	ds = diff --stat
 	l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
