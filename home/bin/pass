@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+FILE="$HOME/Dropbox/secrets/newpasswords.txt.gpg"
+RECIPIENT="awaxa"
+
+case $1 in
+e)
+	tempfoo=`basename $0`
+        TMPFILE=`mktemp -q /tmp/${tempfoo}.XXXXXXXXX`
+        if [ $? -ne 0 ]; then
+		echo "$0: Can't create temp file, exiting..."
+		exit 1
+        fi
+	gpg -d $FILE > $TMPFILE
+	vim $TMPFILE
+	gpg -e -r $RECIPIENT $TMPFILE
+	srm $TMPFILE
+	mv "${TMPFILE}.gpg" $FILE
+	;;
+"")
+	echo which password
+	;;
+*)
+	gpg -d $FILE | grep $*
+	;;
+esac
