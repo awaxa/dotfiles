@@ -45,3 +45,5 @@
 	reword = commit --amend
 	unadd = reset HEAD
 
+[push]
+	default = simple
