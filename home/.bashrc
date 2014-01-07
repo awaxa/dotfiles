@@ -129,3 +129,11 @@ xterm*|rxvt*)
 *)
 	;;
 esac
+
+command -v xcode-select >/dev/null
+if [ $? -eq 0 ] ; then
+	XCODEPATH=$(xcode-select -p)
+	for f in $XCODEPATH/usr/share/git-core/{git-completion.bash,git-prompt.sh} ; do
+		[ -f $f ] && source $f
+	done
+fi
