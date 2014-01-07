@@ -20,3 +20,5 @@ if [ -n "$BASH_VERSION" ]; then
 	. "$HOME/.bashrc"
     fi
 fi
+
+[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
