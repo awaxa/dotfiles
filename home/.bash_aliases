@@ -22,6 +22,8 @@ alias j='jobs'
 alias pull="git branch | \grep '*' | sed 's/* //' | xargs git pull origin"
 alias push="git branch | \grep '*' | sed 's/* //' | xargs git push origin"
 
+alias v='vagrant'
+
 man() {
 	env \
 		LESS_TERMCAP_mb=$(printf "\e[1;31m") \
