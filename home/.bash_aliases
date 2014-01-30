@@ -19,9 +19,6 @@ alias hgrep='<~/.bash_history grep'
 
 alias j='jobs'
 
-alias pull="git branch | \grep '*' | sed 's/* //' | xargs git pull origin"
-alias push="git branch | \grep '*' | sed 's/* //' | xargs git push origin"
-
 alias v='vagrant'
 
 man() {
