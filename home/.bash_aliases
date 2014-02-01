@@ -20,6 +20,9 @@ alias hgrep='<~/.bash_history grep'
 alias j='jobs'
 
 alias v='vagrant'
+alias epuppet='envpuppet puppet'
+alias efacter='envpuppet facter'
+alias headers='curl -s -D - -o /dev/null'
 
 man() {
 	env \
