@@ -4,3 +4,24 @@
 [submodule "home/.vim/bundle/vim-sensible"]
 	path = home/.vim/bundle/vim-sensible
 	url = https://github.com/tpope/vim-sensible.git
+[submodule "home/.vim/bundle/tabular"]
+	path = home/.vim/bundle/tabular
+	url = https://github.com/godlygeek/tabular
+[submodule "home/.vim/bundle/vim-puppet"]
+	path = home/.vim/bundle/vim-puppet
+	url = https://github.com/rodjek/vim-puppet
+[submodule "home/.vim/bundle/syntastic"]
+	path = home/.vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic
+[submodule "home/.vim/bundle/nerdtree"]
+	path = home/.vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree
+[submodule "home/.vim/bundle/neocomplcache.vim"]
+	path = home/.vim/bundle/neocomplcache.vim
+	url = https://github.com/Shougo/neocomplcache.vim
+[submodule "home/.vim/bundle/vim-airline"]
+	path = home/.vim/bundle/vim-airline
+	url = https://github.com/bling/vim-airline
+[submodule "home/.vim/bundle/ctlp.vim"]
+	path = home/.vim/bundle/ctlp.vim
+	url = https://github.com/kien/ctrlp.vim
