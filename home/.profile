@@ -8,6 +8,8 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
+[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
+
 # set PATH so it includes user's private bin if it exists
 for bindir in "$HOME/bin" "$HOME/local/bin" ; do
     if [ -d "$bindir" ] ; then
@@ -22,5 +24,3 @@ if [ -n "$BASH_VERSION" ]; then
 	. "$HOME/.bashrc"
     fi
 fi
-
-[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
