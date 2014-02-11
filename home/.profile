@@ -9,9 +9,11 @@
 #umask 022
 
 # set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
+for bindir in "$HOME/bin" "$HOME/local/bin" ; do
+    if [ -d "$bindir" ] ; then
+        PATH="$bindir:$PATH"
+    fi
+done
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
