@@ -20,6 +20,8 @@ alias hgrep='<~/.bash_history grep'
 alias j='jobs'
 
 alias v='vagrant'
+alias vf='_(){ vagrant $* --provider vmware_fusion ; }; _'
+
 alias epuppet='envpuppet puppet'
 alias efacter='envpuppet facter'
 
