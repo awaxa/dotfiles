@@ -21,6 +21,8 @@ alias j='jobs'
 
 alias v='vagrant'
 alias vf='_(){ vagrant $* --provider vmware_fusion ; }; _'
+alias vl='/usr/bin/VBoxManage list runningvms'
+alias vfl='/Applications/VMware\ Fusion.app/Contents/Library/vmrun list'
 
 alias epuppet='envpuppet puppet'
 alias efacter='envpuppet facter'
