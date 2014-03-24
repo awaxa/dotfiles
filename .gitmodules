@@ -25,3 +25,6 @@
 [submodule "home/.vim/bundle/ctlp.vim"]
 	path = home/.vim/bundle/ctlp.vim
 	url = https://github.com/kien/ctrlp.vim
+[submodule "home/.vim/bundle/Zenburn"]
+	path = home/.vim/bundle/Zenburn
+	url = https://github.com/jnurmine/Zenburn
