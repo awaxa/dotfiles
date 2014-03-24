@@ -6,6 +6,8 @@ color zenburn
 
 set number
 
+set mouse=a
+
 " let &colorcolumn=join(range(81,999),",")
 
 cmap w!! % ! sudo tee 2> /dev/null %
