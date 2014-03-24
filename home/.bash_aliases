@@ -20,7 +20,7 @@ alias hgrep='<~/.bash_history grep'
 alias j='jobs'
 
 alias v='vagrant'
-alias vf='_(){ vagrant $* --provider vmware_fusion ; }; _'
+alias vf='VAGRANT_DEFAULT_PROVIDER=vmware_fusion vagrant'
 alias vl='/usr/bin/VBoxManage list runningvms'
 alias vfl='/Applications/VMware\ Fusion.app/Contents/Library/vmrun list'
 
