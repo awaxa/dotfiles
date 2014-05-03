@@ -1,4 +1,4 @@
-alias mkcd='_(){ mkdir $1; cd $1; }; _'
+alias mkcd='_(){ mkdir -p $1; cd $1; }; _'
 
 alias j='jobs'
 
@@ -7,5 +7,10 @@ alias vf='VAGRANT_DEFAULT_PROVIDER=vmware_fusion vagrant'
 alias vl='/usr/bin/VBoxManage list runningvms'
 alias vfl='/Applications/VMware\ Fusion.app/Contents/Library/vmrun list'
 
-alias epuppet='envpuppet puppet'
-alias efacter='envpuppet facter'
+alias epuppet='~/src/puppet/ext/envpuppet puppet'
+alias efacter='~/src/puppet/ext/envpuppet facter'
+
+alias b='bundle'
+alias bi='b install'
+alias bu='b update'
+alias be='b exec'
