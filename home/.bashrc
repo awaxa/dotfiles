@@ -6,7 +6,7 @@ case $- in
       *) return;;
 esac
 
-for f in ~/.bash_aliases ~/.rvm/scripts/rvm ; do
+for f in ~/.bash_aliases ~/.aliases ~/.rvm/scripts/rvm ; do
 	[ -f $f ] && . $f
 done
 

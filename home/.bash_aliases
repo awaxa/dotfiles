@@ -12,20 +12,9 @@ esac
 alias ll='ls -l'
 alias l='ls -C'
 alias ..='cd ..'
-alias mkcd='_(){ mkdir $1; cd $1; }; _'
 
 alias grep='grep --color=auto'
 alias hgrep='<~/.bash_history grep'
-
-alias j='jobs'
-
-alias v='vagrant'
-alias vf='VAGRANT_DEFAULT_PROVIDER=vmware_fusion vagrant'
-alias vl='/usr/bin/VBoxManage list runningvms'
-alias vfl='/Applications/VMware\ Fusion.app/Contents/Library/vmrun list'
-
-alias epuppet='envpuppet puppet'
-alias efacter='envpuppet facter'
 
 man() {
 	env \
