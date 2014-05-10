@@ -1,6 +1,18 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+" Setting up Vundle - the vim plugin bundler
+let firstinstall=0
+let vundle_readme=expand('~/.vim/bundle/Vundle.vim/README.md')
+if !filereadable(vundle_readme)
+    echo "Installing Vundle.."
+    echo ""
+    silent !mkdir -p ~/.vim/bundle
+    silent !git clone https://github.com/gmarik/Vundle.vim ~/.vim/bundle/Vundle.vim
+    let firstinstall=1
+endif
+
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -49,6 +61,13 @@ filetype plugin indent on    " required
 " :PluginInstall(!)    - install (update) plugins
 " :PluginSearch(!) foo - search (or refresh cache first) for foo
 " :PluginClean(!)      - confirm (or auto-approve) removal of unused plugins
+
+if firstinstall== 1
+    echo "Installing Bundles, please ignore key map error messages"
+    echo ""
+    :PluginInstall
+endif
+" Setting up Vundle - the vim plugin bundler end
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
