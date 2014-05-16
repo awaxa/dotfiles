@@ -11,6 +11,6 @@ alias epuppet='~/src/puppet/ext/envpuppet puppet'
 alias efacter='~/src/puppet/ext/envpuppet facter'
 
 alias b='bundle'
-alias bi='b install'
+alias bi='b install --path vendor'
 alias bu='b update'
 alias be='b exec'
