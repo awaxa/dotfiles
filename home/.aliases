@@ -6,6 +6,7 @@ alias v='vagrant'
 alias vf='VAGRANT_DEFAULT_PROVIDER=vmware_fusion vagrant'
 alias vl='/usr/bin/VBoxManage list runningvms'
 alias vfl='/Applications/VMware\ Fusion.app/Contents/Library/vmrun list | grep -v ^Total'
+alias vla='vl ; vfl'
 
 alias epuppet='~/src/puppet/ext/envpuppet puppet'
 alias efacter='~/src/puppet/ext/envpuppet facter'
