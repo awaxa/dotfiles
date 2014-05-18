@@ -6,6 +6,8 @@ setopt appendhistory
 unsetopt beep
 # End of lines configured by zsh-newuser-install
 
+[ -f ~/.oh-my-zsh/.git/config ] || git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
