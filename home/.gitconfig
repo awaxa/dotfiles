@@ -1,49 +1,45 @@
-[user]
-	name = Greg Kitson
-	email = greg.kitson@gmail.com
-[github]
-	user = awaxa
-[core]
-	excludesfile = ~/.gitglobalignore
-[color]
-	diff = auto
-	status = auto
-	branch = auto
-	interactive = auto
+
+[hub]
+protocol = https
+
 [alias]
-	a = add
-	aa = add -A
-	b = branch
-	bv = branch -avv
-	co = checkout
-	c = commit
-	ca = commit -a
-	dc = commit --dry-run
-	dca = commit --dry-run -a
-	m = commit -m
-	cam = commit -a -m
-	d = diff
-	ds = diff --stat
-	l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-	l1 = log --pretty=oneline
-	ll = log
-	s = status
-	sh = show
-	sl = stash list
-	fa = fetch --all
-	fe = fetch
-	cp = cherry-pick
-	rc = rebase --continue
-	rs = rebase --skip
-	ri = rebase --interactive
-	ra = rebase --abort
-	rh = reset --hard
-	f = commit --amend -CHEAD
-	fixup = commit --amend -CHEAD
-	amend = commit --amend
-	r = commit --amend
-	reword = commit --amend
-	unadd = reset HEAD
+bvv = branch -avv
+l = log --pretty=format:'%C(yellow)%h%C(reset) %s %C(cyan)%cr%C(reset) %C(blue)%an%C(reset) %C(green)%d%C(reset)' --graph --date-order
+b = branch
+aa = add -A
+ds = diff --staged
+co = checkout
+bv = branch -vv
+st = status -sb
+c = commit
+l1 = log --oneline --decorate
+ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+d = diff
+ca = commit -a
+a = add
+m = commit -m
+s = status
+cam = commit -a -m
+
+[core]
+editor = vim
+excludesfile = /opt/boxen/config/git/gitignore
+
+[help]
+autocorrect = 1
+
+[color]
+ui = auto
 
 [push]
-	default = simple
+default = simple
+
+[user]
+email = greg.kitson@gmail.com
+name = Greg Kitson
+
+[github]
+user = awaxa
+
+[credential]
+helper = /opt/boxen/bin/boxen-git-credential
