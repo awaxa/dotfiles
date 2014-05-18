@@ -31,9 +31,6 @@ autocorrect = 1
 [color]
 ui = auto
 
-[push]
-default = simple
-
 [user]
 email = greg.kitson@gmail.com
 name = Greg Kitson
