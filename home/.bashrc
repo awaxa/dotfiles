@@ -119,7 +119,7 @@ Host="\h"
 
 UserColor="$Yellow"
 [ $UID -eq 0 ] && UserColor="$Red"
-PS1="$IBlack$Time24h $Jobs $UserColor$User$Green@$IYellow$Host$Color_Off:$Cyan$PathShort$Red\$( __git_ps1 \" (%s)\" ) $Color_Off\$ "
+PS1="$Jobs $UserColor$User$Green@$IYellow$Host$Color_Off:$Cyan$PathShort$Red\$( __git_ps1 \" (%s)\" ) $Color_Off\$ "
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
