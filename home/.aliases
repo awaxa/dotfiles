@@ -14,5 +14,6 @@ alias hiera='~/src/puppet/ext/envpuppet hiera'
 
 alias b='bundle'
 alias bi='b install --path vendor'
+alias binit='bi && b package'
 alias bu='b update'
 alias be='b exec'
