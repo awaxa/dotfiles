@@ -41,6 +41,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-commentary'
 Plugin 'godlygeek/tabular'
 Plugin 'rodjek/vim-puppet'
 Plugin 'scrooloose/syntastic'
@@ -104,3 +105,5 @@ inoremap <expr><C-l>     neocomplcache#complete_common_string()
 
 map <Leader>b :CtrlPBuffer<CR>
 map <Leader>m :CtrlPMRUFiles<CR>
+
+autocmd FileType puppet set commentstring=#\ %s
