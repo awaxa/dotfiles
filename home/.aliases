@@ -11,6 +11,7 @@ alias vla='vl ; vfl'
 alias puppet='~/src/puppet/ext/envpuppet puppet'
 alias facter='~/src/puppet/ext/envpuppet facter'
 alias hiera='~/src/puppet/ext/envpuppet hiera'
+alias ppv='puppet parser validate'
 
 alias b='bundle'
 alias bi='b install --path vendor'
