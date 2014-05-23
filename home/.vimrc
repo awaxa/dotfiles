@@ -39,6 +39,7 @@ Plugin 'gmarik/Vundle.vim'
 "Plugin 'user/L9', {'name': 'newL9'}
 
 Plugin 'tpope/vim-sensible'
+Plugin 'tpope/vim-surround'
 Plugin 'godlygeek/tabular'
 Plugin 'rodjek/vim-puppet'
 Plugin 'scrooloose/syntastic'
