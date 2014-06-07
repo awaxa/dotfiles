@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-vim $*
-git diff --exit-code || read -p "press enter to add/commit" dontcare
-git add $*
-git commit
