@@ -3,6 +3,7 @@ alias mkcd='_(){ mkdir -p $1; cd $1; }; _'
 alias j='jobs'
 
 alias v='vagrant'
+alias vv='VAGRANT_DEFAULT_PROVIDER=virtualbox vagrant'
 alias vf='VAGRANT_DEFAULT_PROVIDER=vmware_fusion vagrant'
 alias vl='/usr/bin/VBoxManage list runningvms'
 alias vfl='/Applications/VMware\ Fusion.app/Contents/Library/vmrun list | grep -v ^Total'
