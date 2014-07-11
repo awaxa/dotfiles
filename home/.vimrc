@@ -110,7 +110,7 @@ inoremap <expr><C-l>     neocomplcache#complete_common_string()
 map <Leader>b :CtrlPBuffer<CR>
 map <Leader>m :CtrlPMRUFiles<CR>
 
-autocmd FileType puppet set commentstring=#\ %s
+autocmd FileType puppet setlocal commentstring=#\ %s
 autocmd FileType ruby setlocal tabstop=2 softtabstop=2 shiftwidth=2
 
 " Disable Arrow keys in Escape mode
