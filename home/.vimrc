@@ -55,6 +55,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'osyo-manga/vim-over'
 Plugin 'mattn/webapi-vim'
 Plugin 'mattn/gist-vim'
+Plugin 'vim-ruby/vim-ruby'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -110,6 +111,7 @@ map <Leader>b :CtrlPBuffer<CR>
 map <Leader>m :CtrlPMRUFiles<CR>
 
 autocmd FileType puppet set commentstring=#\ %s
+autocmd FileType ruby setlocal tabstop=2 softtabstop=2 shiftwidth=2
 
 " Disable Arrow keys in Escape mode
 map <up> <nop>
