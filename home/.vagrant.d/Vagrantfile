@@ -1,35 +1,8 @@
-require 'yaml'
-keyfile = ENV['HOME'] + "/.vagrant.d/keys.yaml"
-if File.exist?(keyfile)
-  keys = YAML::load_file(keyfile)
-else
-  keys = Hash.new(keyfile + " does not exist")
-end
-
 Vagrant.configure("2") do |config|
   if Vagrant.has_plugin?("vagrant-pe_build")
     config.pe_build.download_root = "http://s3.amazonaws.com/pe-builds/released/:version"
   end
   if Vagrant.has_plugin?("vagrant-cachier")
     config.cache.scope = :box
-  end
-  if Vagrant.has_plugin?("vagrant-digitalocean")
-    config.vm.provider :digital_ocean do |provider, override|
-      override.ssh.private_key_path = '~/.ssh/vagrant'
-      override.vm.box = 'digital_ocean'
-      override.vm.box_url = "https://github.com/smdahlen/vagrant-digitalocean/raw/master/box/digital_ocean.box"
-      provider.client_id = keys['digitalocean']['client_id']
-      provider.api_key = keys['digitalocean']['api_key']
-    end
-  end
-  if Vagrant.has_plugin?("vagrant-aws")
-    config.vm.provider :aws do |aws, override|
-      aws.keypair_name = 'vagrant'
-      override.ssh.private_key_path = '~/.ssh/vagrant'
-      override.vm.box = 'dummy'
-      override.vm.box_url = "https://github.com/mitchellh/vagrant-aws/raw/master/dummy.box"
-      aws.access_key_id = keys['aws']['aws_access_key_id']
-      aws.secret_access_key = keys['aws']['aws_secret_access_key']
-    end
   end
 end
