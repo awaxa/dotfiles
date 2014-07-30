@@ -69,8 +69,6 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH=$HOME/bin:$HOME/local/bin:/usr/local/bin:$PATH
-
 source ~/.aliases
 
 # export MANPATH="/usr/local/man:$MANPATH"
