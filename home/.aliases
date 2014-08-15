@@ -15,7 +15,7 @@ alias hiera='~/src/puppet/ext/envpuppet hiera'
 alias ppv='puppet parser validate'
 
 alias b='bundle'
-alias bi='b install --path vendor'
+alias bi='b install'
 alias binit='bi && b package'
 alias bu='b update'
 alias be='b exec'
