@@ -80,7 +80,7 @@ endif
 " Put your non-Plugin stuff after this line
 
 syntax on
-color solarized
+color zenburn
 
 set number
 
