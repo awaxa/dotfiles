@@ -2,6 +2,9 @@ alias mkcd='_(){ mkdir -p $1; cd $1; }; _'
 
 alias j='jobs'
 
+alias gst='git status'
+alias gd='git diff'
+
 alias v='vagrant'
 alias vv='VAGRANT_DEFAULT_PROVIDER=virtualbox vagrant'
 alias vf='VAGRANT_DEFAULT_PROVIDER=vmware_fusion vagrant'
