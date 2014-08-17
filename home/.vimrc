@@ -81,6 +81,7 @@ endif
 
 syntax on
 color zenburn
+set bg=dark
 
 set number
 
