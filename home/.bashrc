@@ -130,7 +130,7 @@ xterm*|rxvt*)
 	;;
 esac
 
-case "$(uname)" in
+case "$(uname -s)" in
 Darwin)
 	command -v xcode-select >/dev/null
 	if [ $? -eq 0 ] ; then
