@@ -61,11 +61,12 @@ DISABLE_AUTO_UPDATE="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(
 brew
+bundler
 git
 osx
 vagrant
 )
-# aws bundler gem pip python ruby screen tmux wd
+# aws gem pip python ruby screen tmux wd
 # https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins
 
 [ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
