@@ -64,6 +64,7 @@ brew
 bundler
 git
 osx
+sudo
 tmux
 vagrant
 virtualenv
