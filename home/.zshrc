@@ -63,9 +63,9 @@ plugins=(brew git osx vagrant)
 # aws bundler gem pip python ruby screen tmux wd
 # https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins
 
-source $ZSH/oh-my-zsh.sh
-
 [ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
+
+source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
