@@ -63,6 +63,7 @@ plugins=(
 brew
 bundler
 git
+gitignore
 heroku
 history
 osx
