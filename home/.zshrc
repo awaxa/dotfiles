@@ -72,8 +72,9 @@ tmux
 vagrant
 virtualenv
 virtualenvwrapper
+wd
 )
-# aws gem pip python ruby screen wd
+# aws gem pip python ruby screen
 # https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins
 
 [ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
