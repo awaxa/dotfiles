@@ -63,6 +63,7 @@ plugins=(
 brew
 bundler
 git
+history
 osx
 sudo
 tmux
