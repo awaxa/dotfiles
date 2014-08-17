@@ -1,4 +1,4 @@
-alias mkcd='_(){ mkdir -p $1; cd $1; }; _'
+alias mkcd='echo use take instead -- mkcd '
 
 alias j='jobs'
 
