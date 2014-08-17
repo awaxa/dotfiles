@@ -66,6 +66,7 @@ git
 osx
 tmux
 vagrant
+virtualenv
 )
 # aws gem pip python ruby screen wd
 # https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins
