@@ -23,7 +23,6 @@ gitignore
 heroku
 history
 osx
-sudo
 tmux
 vagrant
 virtualenv
