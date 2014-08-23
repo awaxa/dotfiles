@@ -58,6 +58,7 @@ Plugin 'osyo-manga/vim-over'
 Plugin 'mattn/webapi-vim'
 Plugin 'mattn/gist-vim'
 Plugin 'vim-ruby/vim-ruby'
+Plugin 'kchmck/vim-coffee-script'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
