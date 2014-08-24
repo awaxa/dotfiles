@@ -116,6 +116,7 @@ map <Leader>m :CtrlPMRUFiles<CR>
 
 autocmd FileType puppet setlocal commentstring=#\ %s
 autocmd FileType ruby setlocal tabstop=2 softtabstop=2 shiftwidth=2
+autocmd BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
 
 " Disable Arrow keys in Escape mode
 map <up> <nop>
