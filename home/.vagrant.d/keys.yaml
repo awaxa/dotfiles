@@ -1,5 +1,4 @@
 ---
 digitalocean:
-  client_id: 'your_client_id'
-  api_key: 'your_api_key'
+  token: 'your_token'
   private_key_path: '~/.ssh/vagrant'
