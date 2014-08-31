@@ -314,10 +314,10 @@ hilights = (
   { text = "greg"; nick = "yes"; word = "yes"; }
 );
 windows = {
-  1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
-  2 = { name = "hilight"; sticky = "yes"; };
+  1 = { name = "hilight"; sticky = "yes"; };
+  2 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
 };
 mainwindows = {
-  1 = { first_line = "7"; lines = "35"; };
-  2 = { first_line = "1"; lines = "6"; };
+  2 = { first_line = "7"; lines = "35"; };
+  1 = { first_line = "1"; lines = "6"; };
 };
