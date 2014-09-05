@@ -1,0 +1,48 @@
+# loads rc.d files for the current shell
+#
+# example behavior given the following assumptions,
+#   the command reported by ps for the current process is 'bash'
+#   the kernel reported by uname is 'Linux'
+# this script will load files in $dir that match this pattern in alphabetical
+# order:
+#   *.all
+#   *.all.linux
+#   *.all.bash
+#   *.all.bash.linux
+# any of the above with .interactive appended will be loaded for interactive
+# sessions only
+#
+# to protect itself from nullglob errors, the script will touch a set of empty
+# files named 00-nullglob-safety.*
+
+dir=$HOME/.rc.d
+shell=$( ps -o command $$ | grep -o '[a-z]*sh' )
+kernel=$(uname -s | tr '[:upper:]' '[:lower:]')
+
+if [ ! -f $dir/00-nullglob-safety.sh.$shell ] ; then
+    for shell in all $shell ; do
+       touch $dir/00-nullglob-safety.${shell}.${kernel}.interactive
+       touch $dir/00-nullglob-safety.${shell}.$kernel
+       touch $dir/00-nullglob-safety.${shell}.interactive
+       touch $dir/00-nullglob-safety.$shell
+   done
+fi
+
+profiles="$( echo $dir/*.all )"
+profiles="$profiles $( echo $dir/*.all.$kernel )"
+profiles="$profiles $( echo $dir/*.$shell )"
+profiles="$profiles $( echo $dir/*.${shell}.$kernel )"
+case $- in
+    *i*)
+        profiles="$profiles $( echo $dir/*.all.interactive )"
+        profiles="$profiles $( echo $dir/*.all.${kernel}.interactive )"
+        profiles="$profiles $( echo $dir/*.${shell}.interactive )"
+        profiles="$profiles $( echo $dir/*.${shell}.${kernel}.interactive )"
+        ;;
+esac
+
+for file in $( echo $profiles | xargs -n1 basename | sort ) ; do
+    . $dir/$file
+done
+
+# vi: ft=sh

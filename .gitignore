@@ -1,3 +1,4 @@
 home/.ssh/id*
 home/.vim/.netrwhist
 home/.irssi/config.autosave
+home/.rc.d/00-nullglob-safety.*
