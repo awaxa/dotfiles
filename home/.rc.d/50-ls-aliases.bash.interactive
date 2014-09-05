@@ -1,2 +1,4 @@
+# vi: filetype=sh
+
 alias ll='ls -l'
 alias l='ls -lah'

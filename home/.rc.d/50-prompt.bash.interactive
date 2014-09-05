@@ -1,3 +1,5 @@
+# vi: filetype=sh
+
 #  SETUP CONSTANTS
 #  Bunch-o-predefined colors.  Makes reading code easier than escape sequences.
 #  http://mediadoneright.com/content/ultimate-git-ps1-bash-prompt

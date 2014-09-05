@@ -1,3 +1,5 @@
+# vi: filetype=sh
+
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=200000

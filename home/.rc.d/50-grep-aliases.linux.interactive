@@ -1,1 +1,3 @@
+# vi: filetype=sh
+
 alias grep='grep --color=auto'

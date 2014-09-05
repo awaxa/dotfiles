@@ -1,3 +1,5 @@
+# vi: filetype=sh
+
 alias v='vagrant'
 alias vv='VAGRANT_DEFAULT_PROVIDER=virtualbox v'
 alias vf='VAGRANT_DEFAULT_PROVIDER=vmware_fusion v'

@@ -1,3 +1,5 @@
+# vi: filetype=sh
+
 [ -f ~/.oh-my-zsh/.git/config ] || git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 
 export ZSH=$HOME/.oh-my-zsh
