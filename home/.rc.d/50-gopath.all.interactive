@@ -1,0 +1,3 @@
+# vi: filetype=sh
+
+export GOPATH=$HOME/go
