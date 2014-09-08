@@ -1,0 +1,11 @@
+# vi: filetype=sh
+
+bucket='i.awaxa.com'
+
+i() {
+    blobpath=$1
+    key="$bucket/$(apg -a1 -n1 -m3 -x3 -MNCL).${blobpath##*.}"
+    env aws s3 cp --acl public-read $blobpath s3://$key || echo failure
+    echo -n "http://$key" | pbcopy
+    echo "http://$key"
+}
