@@ -25,9 +25,6 @@ cam = commit -a -m
 editor = vim
 excludesfile = /opt/boxen/config/git/gitignore
 
-[help]
-autocorrect = 1
-
 [color]
 ui = auto
 
