@@ -112,6 +112,15 @@ inoremap <expr><C-l>     neocomplcache#complete_common_string()
 
 let g:airline#extensions#tabline#enabled = 1
 
+let g:tmuxline_preset = {
+    \ 'a': '#S',
+    \ 'b': ['%a %b %d', '%R'],
+    \ 'win': ['#I', '#W'],
+    \ 'cwin': ['#I', '#W'],
+    \ 'y': '#(battinfo)',
+    \ 'z': '#h',
+    \}
+
 map <Leader>b :CtrlPBuffer<CR>
 map <Leader>m :CtrlPMRUFiles<CR>
 
