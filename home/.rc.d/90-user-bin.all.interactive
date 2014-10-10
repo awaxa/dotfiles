@@ -1,0 +1,3 @@
+# vi: filetype=sh
+
+[ -d $HOME/bin ] && export PATH=$HOME/bin:$PATH

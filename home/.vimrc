@@ -117,7 +117,7 @@ let g:tmuxline_preset = {
     \ 'b': ['%a %b %d', '%R'],
     \ 'win': ['#I', '#W'],
     \ 'cwin': ['#I', '#W'],
-    \ 'y': '#(battinfo)',
+    \ 'y': '#(battinfo.rb)',
     \ 'z': '#h',
     \}
 
