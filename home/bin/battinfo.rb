@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-# encoding: utf-8
 
 out = ''
 
@@ -8,9 +7,9 @@ pmset = `pmset -g ps`
 if pmset =~ /'(.*)'/
   case $~[1]
   when 'AC Power'
-    out += '⚡  '
+    out += "\u{26A1}  "
   when 'Battery Power'
-    out += '🔋  '
+    out += "\u{1F50B}  "
   end
 end
 
