@@ -87,6 +87,8 @@ syntax on
 color zenburn
 set bg=dark
 
+set hlsearch
+
 set number
 
 set mouse=a
