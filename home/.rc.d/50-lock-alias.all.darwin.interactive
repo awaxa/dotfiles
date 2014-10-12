@@ -1,0 +1,3 @@
+# vi: filetype=sh
+
+alias lock='open /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app'
