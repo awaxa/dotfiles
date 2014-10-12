@@ -92,6 +92,9 @@ if !isdirectory(expand('~/.vim/swap'))
 endif
 set directory=~/.vim/swap//
 
+set splitbelow
+set splitright
+
 set cursorline
 
 set hlsearch
