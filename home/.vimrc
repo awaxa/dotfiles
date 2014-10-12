@@ -105,7 +105,7 @@ match LiteralTabs /\s\	/
 highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 match ExtraWhitespace /\s\+$/
 
-map <leader>n :NERDTreeToggle<CR>
+map <C-n> :NERDTreeToggle<CR>
 
 let g:neocomplcache_enable_at_startup = 1
 inoremap <expr><C-g>     neocomplcache#undo_completion()
