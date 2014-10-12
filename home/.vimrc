@@ -87,6 +87,11 @@ syntax on
 color zenburn
 set bg=dark
 
+if !isdirectory(expand('~/.vim/swap'))
+    silent !mkdir ~/.vim/swap
+endif
+set directory=~/.vim/swap//
+
 set hlsearch
 
 set number
