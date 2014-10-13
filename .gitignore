@@ -3,4 +3,5 @@ home/.vim/.netrwhist
 home/.irssi/config.autosave
 home/.rc.d/00-nullglob-safety.*
 home/.weechat/*log
+home/.weechat/sec.conf
 home/.weechat/*/*log
