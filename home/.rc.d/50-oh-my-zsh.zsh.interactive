@@ -22,7 +22,6 @@ osx
 tmux
 vagrant
 virtualenv
-virtualenvwrapper
 wd
 )
 
