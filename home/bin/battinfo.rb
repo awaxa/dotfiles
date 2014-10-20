@@ -15,6 +15,10 @@ end
 
 out += "#{$~[1]} " if pmset =~ /(\d{1,3}%);/
 
-out += $~[1] if pmset =~ /(\d+:\d+)/
+if pmset =~ /(\d+:\d+)/
+  out += $~[1] unless $~[1] == '0:00'
+else
+  out += "\u{1F551} "
+end
 
 puts out
