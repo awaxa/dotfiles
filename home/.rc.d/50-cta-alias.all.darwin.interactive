@@ -1,0 +1,3 @@
+# vi: filetype=sh
+
+alias cta='caffeinate tmux attach -t'
