@@ -116,6 +116,18 @@ else
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 
+" Open URLs with <Leader>w
+function! HandleURI()
+  let s:uri = matchstr(getline("."), '[a-z]*:\/\/[^ >,;:]*')
+  echo s:uri
+  if s:uri != ""
+          exec "!open \"" . s:uri . "\""
+  else
+          echo "No URI found in line."
+  endif
+endfunction
+map <Leader>w :call HandleURI()<CR>
+
 " let &colorcolumn=join(range(81,999),",")
 
 cmap w!! % ! sudo tee 2> /dev/null %
