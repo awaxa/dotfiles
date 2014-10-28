@@ -1,0 +1,4 @@
+# vi: filetype=sh
+
+alias vundleinstall='vim +PluginInstall +qall'
+alias vundleupdate='vim +PluginUpdate +qall'
