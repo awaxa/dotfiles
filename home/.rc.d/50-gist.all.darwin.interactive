@@ -1,6 +1,6 @@
 # vi: filetype=sh
 
 function ggist() {
-    echo '*~' | gist -c -f .gitignore
+    echo '*~' | gist $2 -c -f .gitignore
     git clone "$(pbpaste).git" $1
 }
