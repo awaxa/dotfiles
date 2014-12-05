@@ -1,7 +1,6 @@
 # vi: filetype=sh
 
-function vgist() {
-    vagrant init -o- | \
-        gist -c -f Vagrantfile
+function ggist() {
+    echo '*~' | gist -c -f .gitignore
     git clone "$(pbpaste).git" $1
 }
