@@ -1,0 +1,7 @@
+# vi: filetype=sh
+
+function vgist() {
+    vagrant init -o- | \
+        gist -c -f Vagrantfile
+    git clone "$(pbpaste).git" $1
+}
