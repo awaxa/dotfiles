@@ -20,6 +20,7 @@ a = add
 m = commit -m
 s = status
 cam = commit -a -m
+f = !sh -c 'git commit -m \"fixup! $(git log -1 --format='\\''%s'\\'' $@)\"' -
 
 [core]
 editor = vim
