@@ -50,6 +50,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'mattn/gist-vim'
 Plugin 'mattn/webapi-vim'
 Plugin 'osyo-manga/vim-over'
+Plugin 'reedes/vim-wordy'
 Plugin 'rodjek/vim-puppet'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
@@ -107,6 +108,8 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_ignore_files = ['\m\.pp$']
 
 inoremap jk <Esc>
+
+nnoremap <silent> K :NextWordy<cr>
 
 " Change cursor style when entering INSERT mode (works in tmux!)
 if exists('$TMUX')
