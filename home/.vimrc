@@ -166,13 +166,13 @@ let g:tmuxline_preset = {
 map <Leader>b :CtrlPBuffer<CR>
 map <Leader>m :CtrlPMRUFiles<CR>
 
-autocmd FileType puppet setlocal commentstring=#\ %s
-autocmd FileType ruby setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-autocmd FileType java setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-autocmd FileType sh setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
-autocmd BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
-
 set expandtab
+
+autocmd FileType puppet setlocal commentstring=#\ %s
+autocmd FileType ruby setlocal tabstop=2 softtabstop=2 shiftwidth=2
+autocmd FileType java setlocal tabstop=2 softtabstop=2 shiftwidth=2
+autocmd FileType sh setlocal tabstop=4 softtabstop=4 shiftwidth=2
+autocmd BufNewFile,BufReadPost *.coffee setl shiftwidth=2
 
 nnoremap S "_diwP
 
