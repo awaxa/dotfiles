@@ -1,0 +1,3 @@
+# vi: filetype=sh
+
+alias mco='ssh peadmin@puppet.awaxa.com mco'
