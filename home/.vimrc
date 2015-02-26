@@ -173,6 +173,8 @@ autocmd FileType java setlocal tabstop=2 softtabstop=2 shiftwidth=2
 autocmd FileType sh setlocal tabstop=4 softtabstop=4 shiftwidth=2
 autocmd BufNewFile,BufReadPost *.coffee setl shiftwidth=2
 
+let g:markdown_fenced_languages = ['coffee', 'css', 'erb=eruby', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sass', 'xml', 'html', 'puppet', 'shell=sh' ]
+
 nnoremap S "_diwP
 
 " Disable Arrow keys in Escape mode
