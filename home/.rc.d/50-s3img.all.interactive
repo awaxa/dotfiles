@@ -4,7 +4,7 @@ i() {
     local bucket='i.awaxa.com'
     local blobpath=$1
     local key="$bucket/$(apg -a1 -n1 -m3 -x3 -MNCL).${blobpath##*.}"
-    env aws s3 cp --acl public-read $blobpath s3://$key || echo failure
+    env aws s3 cp --acl public-read $blobpath s3://$key --profile personal || echo failure
     echo -n "http://$key" | pbcopy
     echo "http://$key"
 }
