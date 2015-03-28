@@ -1,0 +1,5 @@
+# vi: filetype=sh
+
+wiki () {
+    lynx -width 400 -dump http://en.wikipedia.org/wiki/"$*" | less
+}
