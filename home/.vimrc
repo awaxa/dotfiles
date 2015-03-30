@@ -170,6 +170,7 @@ map <Leader>m :CtrlPMRUFiles<CR>
 set expandtab
 
 autocmd FileType puppet setlocal commentstring=#\ %s
+autocmd FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2
 autocmd FileType ruby setlocal tabstop=2 softtabstop=2 shiftwidth=2
 autocmd FileType java setlocal tabstop=2 softtabstop=2 shiftwidth=2
 autocmd FileType sh setlocal tabstop=4 softtabstop=4 shiftwidth=2
