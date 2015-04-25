@@ -1,6 +1,0 @@
-# vi: filetype=sh
-
-if [ -f $HOME/src/puppet/ext/envpuppet ] ; then
-    export ENVPUPPET_BASEDIR=$HOME/src
-    eval $(eval $ENVPUPPET_BASEDIR/puppet/ext/envpuppet)
-fi
