@@ -180,11 +180,10 @@ let g:markdown_fenced_languages = ['coffee', 'css', 'erb=eruby', 'javascript', '
 
 nnoremap S "_diwP
 
-" Disable Arrow keys in Escape mode
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
+map <up> gt
+map <down> gT
+map <left> <C-w>W
+map <right> <C-w>w
 " Disable Arrow keys in Insert mode
 imap <up> <nop>
 imap <down> <nop>
