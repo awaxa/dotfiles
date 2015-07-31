@@ -180,8 +180,8 @@ let g:markdown_fenced_languages = ['coffee', 'css', 'erb=eruby', 'javascript', '
 
 nnoremap S "_diwP
 
-map <up> gt
-map <down> gT
+map <up> :bnext<CR>
+map <down> :bprevious<CR>
 map <left> <C-w>W
 map <right> <C-w>w
 " Disable Arrow keys in Insert mode
