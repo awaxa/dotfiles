@@ -42,7 +42,7 @@ Plugin 'Shougo/neocomplcache.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-airline'
-Plugin 'edkolev/tmuxline.vim'
+" Plugin 'edkolev/tmuxline.vim' # blanks tmux-battery
 Plugin 'godlygeek/tabular'
 Plugin 'jnurmine/Zenburn'
 Plugin 'kchmck/vim-coffee-script'
@@ -108,8 +108,6 @@ set mouse=a
 
 let g:syntastic_check_on_wq = 0
 
-inoremap jk <Esc>
-
 nnoremap <silent> K :NextWordy<cr>
 
 " Change cursor style when entering INSERT mode (works in tmux!)
@@ -160,7 +158,7 @@ let g:tmuxline_preset = {
     \ 'b': ['%a %b %d', '%R'],
     \ 'win': ['#I', '#W'],
     \ 'cwin': ['#I', '#W'],
-    \ 'y': '#(battinfo.rb)',
+    \ 'y': '#{battery_icon} #{battery_percentage} #{battery_remain}',
     \ 'z': '#h',
     \}
 
