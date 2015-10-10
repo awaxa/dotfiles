@@ -54,6 +54,7 @@ Plugin 'reedes/vim-wordy'
 Plugin 'rodjek/vim-puppet'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
+Plugin 'sjl/gundo.vim'
 Plugin 'tmux-plugins/vim-tmux'
 Plugin 'tmux-plugins/vim-tmux-focus-events'
 Plugin 'tpope/vim-commentary'
@@ -164,6 +165,9 @@ let g:tmuxline_preset = {
 
 map <Leader>b :CtrlPBuffer<CR>
 map <Leader>m :CtrlPMRUFiles<CR>
+
+nnoremap <F5> :GundoToggle<CR>
+
 
 set expandtab
 
