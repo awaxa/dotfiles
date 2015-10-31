@@ -1,3 +1,4 @@
 # vi: filetype=sh
 
 alias cta='caffeinate -d tmux attach -t'
+alias cts='caffeinate -d tmux new-session -s'
