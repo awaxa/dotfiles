@@ -7,7 +7,7 @@ alias vv='VAGRANT_DEFAULT_PROVIDER=virtualbox v'
 alias vf='VAGRANT_DEFAULT_PROVIDER=vmware_fusion v'
 alias vdo='VAGRANT_DEFAULT_PROVIDER=digital_ocean v'
 
-alias vl='/usr/bin/VBoxManage list runningvms'
+alias vl='VBoxManage list runningvms'
 alias vfl='~/Applications/VMware\ Fusion.app/Contents/Library/vmrun list | grep -v ^Total'
 alias vla='vl ; vfl'
 
