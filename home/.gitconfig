@@ -25,7 +25,7 @@ f = !sh -c 'git commit -am \"fixup! $(git log -1 --format='\\''%s'\\'' $@)\"' -
 
 [core]
 editor = vim
-excludesfile = /opt/boxen/config/git/gitignore
+excludesfile = /Users/awaxa/.gitglobalignore
 
 [color]
 ui = auto
