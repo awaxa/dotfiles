@@ -50,3 +50,6 @@ conflictstyle = diff3
 [mergetool]
 prompt = false
 keepBackup = false
+
+[rebase]
+autosquash = true
