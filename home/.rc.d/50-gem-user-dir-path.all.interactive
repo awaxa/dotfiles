@@ -1,0 +1,5 @@
+# vi: filetype=sh
+
+if command -v ruby >/dev/null && command -v gem >/dev/null; then
+    PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+fi
