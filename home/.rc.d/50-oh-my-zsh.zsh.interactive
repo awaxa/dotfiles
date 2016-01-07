@@ -23,6 +23,7 @@ history
 osx
 tmux
 vagrant
+vi-mode
 virtualenv
 wd
 )
