@@ -37,9 +37,6 @@ name = Greg Kitson
 [github]
 user = awaxa
 
-[credential]
-helper = /opt/boxen/bin/boxen-git-credential
-
 [instaweb]
 httpd = webrick
 
