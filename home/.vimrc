@@ -42,6 +42,7 @@ Plugin 'Shougo/neocomplcache.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 " Plugin 'edkolev/tmuxline.vim' # blanks tmux-battery
 Plugin 'godlygeek/tabular'
 Plugin 'jnurmine/Zenburn'
