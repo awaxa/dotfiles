@@ -29,3 +29,6 @@ wd
 )
 
 source $ZSH/oh-my-zsh.sh
+
+# add history search to vi-mode
+bindkey "^R" history-incremental-search-backward
