@@ -1,3 +1,0 @@
-# vi: filetype=sh
-
-alias ppv='puppet parser validate'
