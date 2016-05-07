@@ -25,7 +25,6 @@ tmux
 vagrant
 vi-mode
 virtualenv
-wd
 )
 
 source $ZSH/oh-my-zsh.sh
