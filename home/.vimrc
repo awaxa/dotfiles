@@ -105,7 +105,7 @@ set cursorline
 
 set hlsearch
 
-set number
+set relativenumber
 
 set mouse=a
 
