@@ -66,6 +66,11 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-ruby/vim-ruby'
+Plugin 'Glench/Vim-Jinja2-Syntax'
+Plugin 'saltstack/salt-vim'
+Plugin 'klen/python-mode'
+let g:pymode_folding = 0
+Plugin 'hashivim/vim-terraform'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -175,6 +180,7 @@ nnoremap <F5> :GundoToggle<CR>
 set expandtab
 
 autocmd FileType puppet setlocal commentstring=#\ %s
+autocmd FileType terraform setlocal tabstop=2 softtabstop=2 shiftwidth=2
 autocmd FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2
 autocmd FileType ruby setlocal tabstop=2 softtabstop=2 shiftwidth=2
 autocmd FileType java setlocal tabstop=2 softtabstop=2 shiftwidth=2
