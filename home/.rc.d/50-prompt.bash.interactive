@@ -93,4 +93,5 @@ export GIT_PS1_SHOWUNTRACKEDFILES=true
 
 UserColor="$Yellow"
 [ $UID -eq 0 ] && UserColor="$Red"
+[ "$(whoami)" == 'awaxa' ] && User=''
 PS1="\$([ $Jobs -gt 0 ] && echo -n $Jobs\ )$UserColor$User$Green@$IYellow$Host$Color_Off:$Cyan$PathShort$IPurple\$( declare -F __git_ps1 &>/dev/null && __git_ps1 \" (%s)\" ) $Color_Off\$ "
