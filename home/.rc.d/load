@@ -39,7 +39,7 @@
 # files named 00-nullglob-safety.*
 
 dir=$HOME/.rc.d
-shell=$( ps -o command $$ | grep -o '[a-z]*sh' )
+shell=$( ps -o command $$ | grep -o '[a-z]*sh' | grep -v mosh )
 kernel=$(uname -s | tr '[:upper:]' '[:lower:]')
 
 if [ ! -f $dir/00-nullglob-safety.sh.$shell ] ; then
