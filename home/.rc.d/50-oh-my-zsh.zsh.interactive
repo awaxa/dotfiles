@@ -15,7 +15,6 @@ COMPLETION_WAITING_DOTS="true"
 
 plugins=(
 aws
-brew
 bundler
 git
 gitignore
