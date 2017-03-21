@@ -14,18 +14,16 @@ DISABLE_AUTO_UPDATE="true"
 COMPLETION_WAITING_DOTS="true"
 
 plugins=(
-aws
 bundler
 git
-gitignore
-gnu-utils
 heroku
 history
 nmap
 osx
 tmux
 vagrant
-virtualenv
 )
 
 source $ZSH/oh-my-zsh.sh
+
+alias history='fc -il 1'

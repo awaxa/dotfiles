@@ -43,7 +43,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-" Plugin 'edkolev/tmuxline.vim' # blanks tmux-battery
+" Plugin 'edkolev/tmuxline.vim' " blanks tmux-battery
 Plugin 'godlygeek/tabular'
 Plugin 'jnurmine/Zenburn'
 Plugin 'kchmck/vim-coffee-script'
@@ -165,6 +165,7 @@ let g:airline_powerline_fonts = 1
 let g:tmuxline_preset = {
     \ 'a': '#S',
     \ 'b': ['%a %b %d', '%R'],
+    \ 'c': '#(true)',
     \ 'win': ['#I', '#W'],
     \ 'cwin': ['#I', '#W'],
     \ 'y': '#{battery_icon} #{battery_percentage} #{battery_remain}',
